@@ -8,7 +8,9 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter @repo/ui ui:add"
+    "ui:add": "pnpm --filter @repo/ui ui:add",
+    "db:watch": "pnpm --filter @repo/db watch",
+    "db:migration:create": "pnpm --filter @repo/db migration:create"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
