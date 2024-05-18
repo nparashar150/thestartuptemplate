@@ -1,9 +1,9 @@
 using extension auth;
 
 module default {
-    type Person {
-        overloaded required id: uuid {default := uuid_generate_v4();};
+    scalar type TransactionStatus extending enum<"PENDING", "COMPLETED", "FAILED">;
 
+    type Person {
         required email: str;
         required password: str;
         required last_name: str;
@@ -21,5 +21,13 @@ module default {
 
         avatar: str;
         archived_at: datetime;
+    }
+
+    type Transactions {
+        required amount: float64;
+        required multi user_id: Person;
+        required status: TransactionStatus;
+        required created_at: datetime {default := datetime_current()};
+        required updated_at: datetime {default := datetime_current()};
     }
 }

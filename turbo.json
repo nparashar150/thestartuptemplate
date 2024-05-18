@@ -1,10 +1,39 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalDotEnv": [".env"],
+  "globalEnv": [
+    "NEXT_PUBLIC_MAILGUN_API_KEY",
+    "EDGEDB_INSTANCE",
+    "EDGEDB_SECRET_KEY",
+    "EDGEDB_AUTH_SIGNING_KEY",
+    "EDGEDB_AUTH_CALLBACK_URL",
+    "FIREBASE_API_KEY",
+    "FIREBASE_CLIENT_ID",
+    "FIREBASE_CLIENT_SECRET"
+  ],
   "pipeline": {
     "build": {
+      "env": [
+        "NEXT_PUBLIC_FIREBASE_API_KEY",
+        "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN",
+        "NEXT_PUBLIC_FIREBASE_PROJECT_ID",
+        "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET",
+        "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID",
+        "NEXT_PUBLIC_FIREBASE_APP_ID",
+        "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID",
+        "NEXT_PUBLIC_BACKEND_URL",
+        "NEXT_PUBLIC_POSTHOG_HOST",
+        "NEXT_PUBLIC_POSTHOG_KEY"
+      ],
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]

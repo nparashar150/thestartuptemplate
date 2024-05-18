@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "watch": "edgedb watch",
+    "generate": "npx @edgedb/generate edgeql-js",
     "migration:create": "edgedb migration create"
   },
   "keywords": [],
