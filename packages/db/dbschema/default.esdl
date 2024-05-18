@@ -1,3 +1,5 @@
+using extension auth;
+
 module default {
     type Person {
         overloaded required id: uuid {default := uuid_generate_v4();};

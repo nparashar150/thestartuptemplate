@@ -39,6 +39,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
         version: 14.1.0
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config

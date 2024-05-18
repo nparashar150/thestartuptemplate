@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "@edgedb/generate": "^0.5.3"
+  },
+  "exports": {
+    ".": "./index.ts"
   }
 }
