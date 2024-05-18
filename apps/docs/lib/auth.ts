@@ -5,9 +5,9 @@ import GoogleProvider from "next-auth/providers/google";
 
 export const AuthOptions: NextAuthOptions = {
   pages: {
-    signIn: "/sign-in",
-    signOut: "/sign-out",
-    newUser: "/sign-up",
+    signIn: "/signin",
+    signOut: "/signout",
+    newUser: "/signup",
     error: "/auth/error",
     verifyRequest: "/auth/verify-request",
   },
@@ -27,7 +27,6 @@ export const AuthOptions: NextAuthOptions = {
       if (user) {
         const isUser = await edgeql
           .select(edgeql.Person, (Person) => ({
-            id: Person.id,
             email: Person.email,
             avatar: Person.avatar,
             provider: Person.provider,
