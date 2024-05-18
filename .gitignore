@@ -33,3 +33,5 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+packages/db/dbschema/edgeql-js

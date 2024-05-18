@@ -4,12 +4,12 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "build": "turbo build",
     "ui:add": "pnpm --filter @repo/ui ui:add",
     "db:watch": "pnpm --filter @repo/db watch",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:migration:create": "pnpm --filter @repo/db migration:create"
   },
   "devDependencies": {
