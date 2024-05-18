@@ -1,5 +1,3 @@
-using extension auth;
-
 module default {
     scalar type TransactionStatus extending enum<"PENDING", "COMPLETED", "FAILED">;
 
