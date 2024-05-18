@@ -1,11 +1,12 @@
 module default {
     scalar type TransactionStatus extending enum<"PENDING", "COMPLETED", "FAILED">;
+    scalar type Provider extending enum<"GITHUB", "GOOGLE", "EMAIL">;
 
     type Person {
         required email: str;
-        required password: str;
         required last_name: str;
         required first_name: str;
+        required provider: Provider {default := "EMAIL"};
         
         required created_at: datetime {default := datetime_current()};
         required updated_at: datetime {default := datetime_current()};
@@ -18,6 +19,7 @@ module default {
         required marketing_consent: bool {default := false};
 
         avatar: str;
+        password: str;
         archived_at: datetime;
     }
 
