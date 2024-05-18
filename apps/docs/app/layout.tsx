@@ -1,6 +1,6 @@
 import "@repo/ui/globals.css";
 import { getServerSession } from "next-auth";
-import SessionProvider from "@/app/components/SessionProvider";
+import SessionProvider from "./components/SessionProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
