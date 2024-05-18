@@ -3,6 +3,13 @@ import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
 export const AuthOptions: NextAuthOptions = {
+  pages: {
+    signIn: "/sign-in",
+    signOut: "/sign-out",
+    newUser: "/sign-up",
+    error: "/auth/error",
+    verifyRequest: "/auth/verify-request",
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
