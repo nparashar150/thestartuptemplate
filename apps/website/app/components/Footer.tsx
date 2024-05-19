@@ -13,7 +13,7 @@ const Footer = () => {
             className="font-bold text-xl flex"
           >
             <Icons.logo className="h-6 w-6 mr-2" />
-            ShadcnUI/React
+            The Startup
           </a>
         </div>
 

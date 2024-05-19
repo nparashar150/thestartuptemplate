@@ -52,7 +52,7 @@ const Navbar = () => {
               className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2"
             >
               <Icons.logo />
-              ShadcnUI/React
+              The Startup
             </a>
           </NavigationMenuItem>
 

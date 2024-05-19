@@ -1,15 +1,16 @@
-import Link from "next/link";
+import GridPattern from "@repo/ui/components/grid-pattern";
+import { Icons } from "@repo/ui/components/icons";
 import { buttonVariants } from "@repo/ui/components/ui/button";
+import { cn } from "@repo/ui/lib/utils";
+import Link from "next/link";
 import {
   GithubSignInButton,
   GoogleSignInButton,
 } from "../../components/auth-button";
-import { cn } from "@repo/ui/lib/utils";
-import { Icons } from "@repo/ui/components/icons"
 
 export default function AuthenticationPage() {
   return (
-    <div className="relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div className="relative h-screen overflow-hidden flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
         href="/examples/authentication"
         className={cn(
@@ -20,17 +21,36 @@ export default function AuthenticationPage() {
         Login
       </Link>
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-        <div className="absolute inset-0 bg-zinc-900" />
-        <div className="relative z-20 flex items-center text-lg font-medium">
-          <Icons.logo className="h-6 w-6 mr-2" />
-          Logo
+        <div className="absolute inset-0 bg-zinc-900">
+          <GridPattern
+            squares={[
+              [4, 4],
+              [5, 1],
+              [8, 2],
+              [6, 6],
+              [10, 5],
+              [13, 3],
+            ]}
+            className={cn(
+              "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+              "inset-x-0 inset-y-[-50%] h-[200%] -skew-y-12",
+            )}
+          />
         </div>
+        <Link
+          href="/"
+          className="relative z-20 flex items-center text-lg font-medium"
+        >
+          <Icons.logo className="h-6 w-6 mr-2" />
+          The Startup
+        </Link>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              &ldquo;This library has saved me countless hours of work and
-              helped me deliver stunning designs to my clients faster than ever
-              before.&rdquo;
+              &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vivamus commodo, erat ac egestas sollicitudin, mauris eros
+              vulputate odio, interdum pretium mauris lorem sed enim. Sed a
+              maximus eros. &rdquo;
             </p>
             <footer className="text-sm">Sofia Davis</footer>
           </blockquote>

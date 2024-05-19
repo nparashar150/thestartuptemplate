@@ -1,10 +1,20 @@
-import { Icons } from "@repo/ui/components/icons";
-import { Button, buttonVariants } from "@repo/ui/components/ui/button";
-import HeroCards from "./HeroCards";
+import AnimatedGradientText from "@repo/ui/components/animated-gradient-text";
 import GridPattern from "@repo/ui/components/grid-pattern";
+import { Icons } from "@repo/ui/components/icons";
+import { Button } from "@repo/ui/components/ui/button";
 import { cn } from "@repo/ui/lib/utils";
+import { useState } from "react";
+import HeroCards from "./HeroCards";
 
 const Hero = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("npx create-thestartuptemplate my-app");
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
   return (
     <section className="relative container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
       <GridPattern
@@ -14,7 +24,7 @@ const Hero = () => {
           [8, 2],
           [6, 6],
           [10, 5],
-          [13, 3]
+          [13, 3],
         ]}
         className={cn(
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
@@ -22,6 +32,16 @@ const Hero = () => {
         )}
       />
       <div className="text-center lg:text-start space-y-6">
+        <AnimatedGradientText className="mx-auto lg:mx-0">
+          🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />
+          <span
+            className={cn(
+              `inline animate-gradient bg-gradient-to-r from-[#F596D3] via-[#1fc0f1] to-[#D247BF] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+            )}
+          >
+            Introducing The Startup Template
+          </span>
+        </AnimatedGradientText>
         <main className="text-5xl md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
@@ -44,19 +64,18 @@ const Hero = () => {
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
-
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href="https://github.com/nparashar150/thestartuptemplate"
-            className={`w-full md:w-1/3 ${buttonVariants({
-              variant: "outline",
-            })}`}
+          <Button
+            className="w-fit"
+            onClick={() => copyToClipboard()}
+            variant={!isCopied ? "outline" : "default"}
           >
-            Github Repository
-            <Icons.gitHub className="ml-2 w-5 h-5" />
-          </a>
+            {!isCopied ? (
+              <Icons.clipboard className="w-4 h-4 mr-2" />
+            ) : (
+              <Icons.check className="w-4 h-4 mr-2" />
+            )}
+            npx create-thestartuptemplate my-app
+          </Button>
         </div>
       </div>
 
