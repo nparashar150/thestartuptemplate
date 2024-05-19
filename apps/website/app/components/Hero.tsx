@@ -3,10 +3,10 @@ import GridPattern from "@repo/ui/components/grid-pattern";
 import { Icons } from "@repo/ui/components/icons";
 import { Button } from "@repo/ui/components/ui/button";
 import { cn } from "@repo/ui/lib/utils";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import HeroCards from "./HeroCards";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 
 const Hero = () => {
   const [isCopied, setIsCopied] = useState(false);
