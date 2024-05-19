@@ -1,3 +1,5 @@
+import { BorderBeam } from "@repo/ui/components/border-beam";
+import { Icons } from "@repo/ui/components/icons";
 import {
   Avatar,
   AvatarFallback,
@@ -9,12 +11,11 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@repo/ui/components/ui/card";
-import { Icons } from "@repo/ui/components/icons";
-import { BorderBeam } from "@repo/ui/components/border-beam";
+import Image from "next/image";
 
 const HeroCards = () => {
   return (
@@ -40,11 +41,16 @@ const HeroCards = () => {
       {/* Team */}
       <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="mt-8 flex justify-center items-center pb-2">
-          <img
-            alt="user avatar"
-            src="https://avatars.githubusercontent.com/u/63806451?v=4"
-            className="z-10 absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
-          />
+          <div className="rounded-full w-24 h-24 z-10 absolute grayscale-[0%] -top-12">
+            <Image
+              width={96}
+              height={96}
+              alt="user avatar"
+              src="https://avatars.githubusercontent.com/u/63806451?v=4"
+              className="rounded-full w-24 h-24 aspect-square object-cover"
+            />
+            <BorderBeam />
+          </div>
           <CardTitle className="text-center">Naman Parashar</CardTitle>
           <CardDescription className="font-normal text-primary">
             Product Developer
@@ -57,7 +63,7 @@ const HeroCards = () => {
             exceeds expectations
           </p>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="z-10">
           <a
             rel="noreferrer noopener"
             href="https://github.com/nparashar150"

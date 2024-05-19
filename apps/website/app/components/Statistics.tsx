@@ -1,25 +1,27 @@
+import NumberTicker from "@repo/ui/components/number-ticket";
+
 const Statistics = () => {
   interface statsProps {
-    quantity: string;
+    quantity: React.ReactNode;
     description: string;
   }
 
   const stats: statsProps[] = [
     {
-      quantity: "2.7K+",
       description: "Users",
+      quantity: <NumberTicker value={2700} />,
     },
     {
-      quantity: "1.8K+",
       description: "Subscribers",
+      quantity: <NumberTicker value={1800} />,
     },
     {
-      quantity: "112",
       description: "Downloads",
+      quantity: <NumberTicker value={112} />,
     },
     {
-      quantity: "4",
       description: "Products",
+      quantity: <NumberTicker value={4} />
     },
   ];
 

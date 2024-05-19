@@ -1,10 +1,26 @@
+import { Icons } from "@repo/ui/components/icons";
 import { Button, buttonVariants } from "@repo/ui/components/ui/button";
 import HeroCards from "./HeroCards";
-import { Icons } from "@repo/ui/components/icons";
+import GridPattern from "@repo/ui/components/grid-pattern";
+import { cn } from "@repo/ui/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
+    <section className="relative container grid lg:grid-cols-2 place-items-center py-20 md:py-32 gap-10">
+      <GridPattern
+        squares={[
+          [4, 4],
+          [5, 1],
+          [8, 2],
+          [6, 6],
+          [10, 5],
+          [13, 3]
+        ]}
+        className={cn(
+          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+          "inset-x-0 inset-y-[-50%] h-[200%] skew-y-12",
+        )}
+      />
       <div className="text-center lg:text-start space-y-6">
         <main className="text-5xl md:text-6xl font-bold">
           <h1 className="inline">

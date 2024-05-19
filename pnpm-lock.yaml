@@ -205,6 +205,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      framer-motion:
+        specifier: ^11.2.4
+        version: 11.2.4(react-dom@18.2.0)(react@18.3.1)
       lucide-react:
         specifier: ^0.314.0
         version: 0.314.0(react@18.3.1)
@@ -4172,6 +4175,25 @@ packages:
   /fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
+
+  /framer-motion@11.2.4(react-dom@18.2.0)(react@18.3.1):
+    resolution: {integrity: sha512-D+EXd0lspaZijv3BJhAcSsyGz+gnvoEdnf+QWkPZdhoFzbeX/2skrH9XSVFb0osgUnCajW8x1frjhLuKwa/Reg==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.2.0(react@18.3.1)
+      tslib: 2.6.2
+    dev: false
 
   /fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
