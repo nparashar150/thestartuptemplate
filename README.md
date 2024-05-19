@@ -126,3 +126,8 @@ Learn more about the power of Turborepo:
 Learn more about shadcn/ui:
 
 - [Documentation](https://ui.shadcn.com/docs)
+
+## Thanks to these resources 
+ 
+- [@Kiranism/next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter/)
+- [@leoMirandaa/shadcn-landing-page](https://github.com/leoMirandaa/shadcn-landing-page)
