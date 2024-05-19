@@ -14,6 +14,7 @@ import {
   CardFooter,
 } from "@repo/ui/components/ui/card";
 import { Icons } from "@repo/ui/components/icons";
+import { BorderBeam } from "@repo/ui/components/border-beam";
 
 const HeroCards = () => {
   return (
@@ -33,6 +34,7 @@ const HeroCards = () => {
         </CardHeader>
 
         <CardContent>This landing page is awesome!</CardContent>
+        <BorderBeam />
       </Card>
 
       {/* Team */}
@@ -41,7 +43,7 @@ const HeroCards = () => {
           <img
             alt="user avatar"
             src="https://avatars.githubusercontent.com/u/63806451?v=4"
-            className="absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
+            className="z-10 absolute grayscale-[0%] -top-12 rounded-full w-24 h-24 aspect-square object-cover"
           />
           <CardTitle className="text-center">Naman Parashar</CardTitle>
           <CardDescription className="font-normal text-primary">
@@ -102,6 +104,7 @@ const HeroCards = () => {
             <Icons.linkedin className="h-8 w-8" />
           </a>
         </CardFooter>
+        <BorderBeam />
       </Card>
 
       {/* Pricing */}
@@ -141,6 +144,7 @@ const HeroCards = () => {
             )}
           </div>
         </CardFooter>
+        <BorderBeam />
       </Card>
 
       {/* Service */}
@@ -157,6 +161,7 @@ const HeroCards = () => {
             </CardDescription>
           </div>
         </CardHeader>
+        <BorderBeam />
       </Card>
     </div>
   );
