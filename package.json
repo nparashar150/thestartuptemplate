@@ -1,8 +1,17 @@
 {
-  "name": "thestartuptemplate",
+  "name": "create-thestartuptemplate",
   "version": "1.1.0",
-  "private": true,
   "license": "MIT",
+  "bin": "bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nparashar150/thestartuptemplate"
+  },
+  "author": {
+    "name": "Naman Parashar",
+    "email": "nparashar150@gmail.com",
+    "url": "https://www.nparashar150.com"
+  },
   "scripts": {
     "dev": "turbo dev",
     "lint": "turbo lint",
