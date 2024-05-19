@@ -13,6 +13,7 @@ import {
 } from "@repo/ui/components/ui/sheet";
 import { buttonVariants } from "@repo/ui/components/ui/button";
 import { Icons } from "@repo/ui/components/icons";
+import ThemeToggle from "./ThemeToggle";
 
 interface RouteProps {
   href: string;
@@ -96,6 +97,7 @@ const Navbar = () => {
                     <Icons.gitHub className="mr-2 w-5 h-5" />
                     Github
                   </a>
+                  <ThemeToggle />
                 </nav>
               </SheetContent>
             </Sheet>
@@ -127,6 +129,7 @@ const Navbar = () => {
               <Icons.gitHub className="mr-2 w-5 h-5" />
               Github
             </a>
+            <ThemeToggle />
           </div>
         </NavigationMenuList>
       </NavigationMenu>
