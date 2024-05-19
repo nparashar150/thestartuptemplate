@@ -5,9 +5,13 @@ import { Button } from "@repo/ui/components/ui/button";
 import { cn } from "@repo/ui/lib/utils";
 import { useState } from "react";
 import HeroCards from "./HeroCards";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 const Hero = () => {
   const [isCopied, setIsCopied] = useState(false);
+  const searchParams = useSearchParams();
+  const isDemo = searchParams.get("mode") === "demo";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText("npx create-thestartuptemplate my-app");
@@ -64,18 +68,24 @@ const Hero = () => {
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button
-            className="w-fit"
-            onClick={() => copyToClipboard()}
-            variant={!isCopied ? "outline" : "default"}
-          >
-            {!isCopied ? (
-              <Icons.clipboard className="w-4 h-4 mr-2" />
-            ) : (
-              <Icons.check className="w-4 h-4 mr-2" />
-            )}
-            npx create-thestartuptemplate my-app
-          </Button>
+          {!isDemo ? (
+            <Button
+              className="w-fit"
+              onClick={() => copyToClipboard()}
+              variant={!isCopied ? "outline" : "default"}
+            >
+              {!isCopied ? (
+                <Icons.clipboard className="w-4 h-4 mr-2" />
+              ) : (
+                <Icons.check className="w-4 h-4 mr-2" />
+              )}
+              npx create-thestartuptemplate my-app
+            </Button>
+          ) : (
+            <Link href="/dashboard">
+              <Button className="w-fit">Go to Dashboard</Button>
+            </Link>
+          )}
         </div>
       </div>
 
