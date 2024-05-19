@@ -21,6 +21,7 @@ import {
   Moon,
   MoreVertical,
   Pizza,
+  Clipboard,
   Plus,
   Settings,
   WalletIcon,
@@ -80,6 +81,7 @@ export const Icons = {
   arrowUpToLine: ArrowUpToLine,
   walletIcon: WalletIcon,
   radar: Radar,
+  clipboard: Clipboard,
   linkedin: ({ ...props }: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
