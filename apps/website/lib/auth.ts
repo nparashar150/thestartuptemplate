@@ -5,9 +5,9 @@ import GoogleProvider from "next-auth/providers/google";
 
 export const AuthOptions: NextAuthOptions = {
   pages: {
-    signIn: "/signin",
-    signOut: "/signout",
-    newUser: "/signup",
+    signIn: "/login",
+    signOut: "/logout",
+    newUser: "/login",
     error: "/auth/error",
     verifyRequest: "/auth/verify-request",
   },
