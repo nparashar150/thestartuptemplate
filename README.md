@@ -1,133 +1,94 @@
-# Turborepo starter with shadcn/ui
+# The Startup Template
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-This is Turborepo starter with shadcn/ui pre-configured.
+Welcome to **The Startup Template**! This template is designed to help you kickstart your side project with a pre-configured setup that saves you time and effort. It includes a beautiful landing page, a feature-rich dashboard, and integrates seamlessly with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
 
-> [!NOTE]
-> This example uses `pnpm` as package manager.
+## Features
 
-[npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
+- **Production-Ready**: Beautiful landing page and dashboard ready for production use.
+- **Integrated Tech Stack**: Pre-configured with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
+- **Reusable Components**: A variety of components to reuse and customize.
+- **Focus on MVP**: Allows you to focus on building your MVP without worrying about the initial setup.
 
-## Using this example
+## How It Works
 
-Clone the repository:
+1. **Download the Template**: Get the pre-configured project setup.
+   ```sh
+   npx create-thestartuptemplate my-app
+   ```
+2. **Customize Your Content**: Update the landing and dashboard pages with your content.
+3. **Integrate Your Features**: Add your unique features using the provided components.
+4. **Deploy and Launch**: Launch your MVP quickly and efficiently.
 
-```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git
-```
+## Installation
 
-Install dependencies:
-
-```sh
-cd turborepo-shadcn-ui
-pnpm install
-```
-
-### Add ui components
-
-Use the pre-made script:
+To get started with The Startup Template, run the following command:
 
 ```sh
-pnpm ui:add <component-name>
+npx create-thestartuptemplate my-app
 ```
 
-> This works just like the add command in the `shadcn/ui` CLI.
+Replace `my-app` with the name of your project. This command will set up a new project with all necessary dependencies and configurations.
 
-### Add a new app
+## Getting Started
 
-Turborepo offer a simple command to add a new app:
+1. Navigate to your project directory:
+   ```sh
+   cd my-app
+   ```
+2. Install the dependencies:
+   ```sh
+   pnpm install
+   ```
+3. Start the development server:
+   ```sh
+   pnpm run dev
+   ```
+4. Open your browser and visit `http://localhost:3000` to see your project in action.
 
-```sh
-pnpm turbo gen workspace --name <app-name>
-```
+## Customization
 
-This will create a new empty app in the `apps` directory.
+Feel free to customize the template according to your needs. You can modify the components, pages, and styles to fit your project's requirements.
 
-If you want, you can copy an existing app with:
+## FAQ
 
-```sh
-pnpm turbo gen workspace --name <app-name> --copy
-```
+**What is included in the template?**
 
-> [!NOTE]
-> Remember to run `pnpm install` after copying an app.
+- The template includes a beautiful landing page, a dashboard, and integrations with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
 
-## What's inside?
+**How do I customize the template?**
 
-This Turborepo includes the following packages/apps:
+- You can easily customize the template by modifying the provided components and pages according to your needs.
 
-### Apps and Packages
+**Is the template suitable for production use?**
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications (🚀 powered by **shadcn/ui**)
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- Yes, the template is designed to be production-ready, ensuring you can launch your project with confidence.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Can I integrate other tools with this template?**
 
-### Utilities
+- Absolutely! The template is flexible and can be extended with other tools and libraries as needed.
 
-This Turborepo has some additional tools already setup for you:
+**Do I need prior experience with EdgeDB, Next.js, or ShadcnUI?**
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Basic knowledge of these technologies is helpful, but the template is designed to be user-friendly and easy to set up.
 
-### Build
+## Contributing
 
-To build all apps and packages, run the following command:
+I welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to learn how you can help us improve this project.
 
-```sh
-cd turborepo-shadcn-ui
-pnpm build
-```
+## Acknowledgements
 
-### Develop
+Special thanks to the team who have made this project possible:
 
-To develop all apps and packages, run the following command:
-
-```sh
-cd turborepo-shadcn-ui
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd turborepo-shadcn-ui
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```sh
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
-
-Learn more about shadcn/ui:
-
-- [Documentation](https://ui.shadcn.com/docs)
-
-## Thanks to these resources 
- 
+- [EdgeDB](https://www.edgedb.com/)
+- [Next.js](https://nextjs.org/)
+- [ShadcnUI](https://github.com/shadcn/ui)
+- [NextAuth](https://next-auth.js.org/)
 - [@Kiranism/next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter/)
 - [@leoMirandaa/shadcn-landing-page](https://github.com/leoMirandaa/shadcn-landing-page)
+
+
+---
+
+Thank you for using **The Startup Template**! I hope it helps you build amazing projects quickly and efficiently.
