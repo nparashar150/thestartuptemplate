@@ -1,9 +1,10 @@
-import { client, edgeql } from "@repo/db";
 import { NextAuthOptions } from "next-auth";
-import GitHubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider, { GithubProfile } from "next-auth/providers/github";
+import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
+import { getOrCreateUser } from "./db";
+import { triggerEmail } from "./mail";
 
-export const AuthOptions: NextAuthOptions = {
+const AuthOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
     signOut: "/logout",
@@ -24,58 +25,68 @@ export const AuthOptions: NextAuthOptions = {
   session: { strategy: "jwt" },
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        const isUser = await edgeql
-          .select(edgeql.Person, (Person) => ({
-            email: Person.email,
-            avatar: Person.avatar,
-            provider: Person.provider,
-            created_at: Person.created_at,
-            updated_at: Person.updated_at,
-            last_name: Person.last_name,
-            first_name: Person.first_name,
-            password: Person.password,
-            last_login: Person.last_login,
-            is_verified: Person.is_verified,
-            archived_at: Person.archived_at,
-            is_archived: Person.is_archived,
-            marketing_consent: Person.marketing_consent,
-            number_of_logins: Person.number_of_logins,
-          }))
-          .run(client);
-
-        if (isUser.length !== 0) {
-          const { ...rest } = isUser[0];
-          token = { ...token, ...rest };
-        } else {
-          if (!user.email) throw new Error("Email not found");
-
-          const newUserBody = {
-            password: "",
-            email: user.email,
-            marketing_consent: false,
-            avatar: user.image || "",
-            last_name: user.name || "",
-            first_name: user.name || "",
-          };
-
-          const newUser = await edgeql
-            .insert(edgeql.Person, newUserBody)
-            .run(client);
-
-          token = { ...token, ...newUserBody, id: newUser?.id };
-        }
+      if (user && user?.email) {
+        const person = await getOrCreateUser({
+          email: user.email,
+          name: user.name || "",
+          image: user.image || "",
+        });
+        token = { ...token, ...person };
       }
-
       return token;
     },
 
     async session({ session, token }) {
-      if (token) {
-        session.user = { ...session.user, ...token };
+      if (token) session.user = { ...session.user, ...token };
+      return session;
+    },
+
+    async signIn({ account, profile }) {
+      const email = profile?.email;
+      if (!email) return false;
+
+      if (account?.provider === "google") {
+        const googleProfile = profile as GoogleProfile;
+        const person = await getOrCreateUser({
+          email: email,
+          name: googleProfile.name,
+          image: googleProfile.picture,
+        });
+
+        if (person.is_new)
+          triggerEmail({
+            to: email,
+            variables: { name: googleProfile.name },
+            subject: "👋 Welcome to The Startup template",
+            template: "👋 welcome to the startup template",
+          });
+
+        return true;
       }
 
-      return session;
+      if (account?.provider === "github") {
+        const githubProfile = profile as GithubProfile;
+        const person = await getOrCreateUser({
+          email: email,
+          name: githubProfile.name || "",
+          image: githubProfile.avatar_url,
+        });
+
+        if (person.is_new)
+          triggerEmail({
+            to: email,
+            variables: { name: githubProfile.name || "" },
+            subject: "👋 Welcome to The Startup template",
+            template: "👋 welcome to the startup template",
+          });
+
+        return true;
+      }
+
+      return true;
     },
   },
 };
+
+export { AuthOptions };
+export type { GithubProfile, GoogleProfile };

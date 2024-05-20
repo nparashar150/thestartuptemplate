@@ -17,7 +17,9 @@
     "GITHUB_ID",
     "GITHUB_SECRET",
     "NEXTAUTH_SECRET",
-    "DOCS_URL"
+    "DOCS_URL",
+    "MAILGUN_DOMAIN",
+    "MAILGUN_SENDER_EMAIL"
   ],
   "pipeline": {
     "build": {
@@ -36,7 +38,9 @@
         "GITHUB_ID",
         "GITHUB_SECRET",
         "NEXTAUTH_SECRET",
-        "DOCS_URL"
+        "DOCS_URL",
+        "MAILGUN_DOMAIN",
+        "MAILGUN_SENDER_EMAIL"
       ],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
