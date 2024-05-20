@@ -21,6 +21,8 @@ module default {
         avatar: str;
         password: str;
         archived_at: datetime;
+
+        constraint exclusive on (.email);
     }
 
     type Transactions {
@@ -37,8 +39,11 @@ module default {
         required content: str {default := ""}
         required is_archived: bool {default := false};
         required is_published: bool {default := false};
+        required slug: str {default := <str>uuid_generate_v4()}
         required created_at: datetime {default := datetime_current()};
         required updated_at: datetime {default := datetime_current()};
         required published_at: datetime {default := datetime_current()};
+
+        constraint exclusive on (.slug);
     }
 }
