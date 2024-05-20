@@ -30,4 +30,15 @@ module default {
         required created_at: datetime {default := datetime_current()};
         required updated_at: datetime {default := datetime_current()};
     }
+
+    type Post {
+        required title: str;
+        required author: Person;
+        required content: str {default := ""}
+        required is_archived: bool {default := false};
+        required is_published: bool {default := false};
+        required created_at: datetime {default := datetime_current()};
+        required updated_at: datetime {default := datetime_current()};
+        required published_at: datetime {default := datetime_current()};
+    }
 }
