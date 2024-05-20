@@ -21,7 +21,7 @@ const Statistics = () => {
     },
     {
       description: "Products",
-      quantity: <NumberTicker value={4} />
+      quantity: <NumberTicker value={4} />,
     },
   ];
 

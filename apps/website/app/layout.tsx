@@ -29,7 +29,7 @@ export default async function RootLayout({
             defaultTheme="system"
             disableTransitionOnChange
           >
-            <div className="min-h-screen font-sans antialiased">{children}</div>  
+            <div className="min-h-screen font-sans antialiased">{children}</div>
           </ThemeProvider>
         </SessionProvider>
       </body>

@@ -88,7 +88,6 @@ Special thanks to the team who have made this project possible:
 - [@Kiranism/next-shadcn-dashboard-starter](https://github.com/Kiranism/next-shadcn-dashboard-starter/)
 - [@leoMirandaa/shadcn-landing-page](https://github.com/leoMirandaa/shadcn-landing-page)
 
-
 ---
 
 Thank you for using **The Startup Template**! I hope it helps you build amazing projects quickly and efficiently.

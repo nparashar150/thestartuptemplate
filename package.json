@@ -17,8 +17,9 @@
     "lint": "turbo lint",
     "build": "turbo build",
     "ui:add": "pnpm --filter @repo/ui ui:add",
-    "db:watch": "pnpm --filter @repo/db watch",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:watch": "pnpm watch",
+    "db:generate": "pnpm --filter @repo/db generate",
     "db:migration:create": "pnpm --filter @repo/db migration:create"
   },
   "devDependencies": {
