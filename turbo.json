@@ -16,7 +16,8 @@
     "GOOGLE_CLIENT_SECRET",
     "GITHUB_ID",
     "GITHUB_SECRET",
-    "NEXTAUTH_SECRET"
+    "NEXTAUTH_SECRET",
+    "DOCS_URL"
   ],
   "pipeline": {
     "build": {
@@ -34,7 +35,8 @@
         "GOOGLE_CLIENT_SECRET",
         "GITHUB_ID",
         "GITHUB_SECRET",
-        "NEXTAUTH_SECRET"
+        "NEXTAUTH_SECRET",
+        "DOCS_URL"
       ],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
