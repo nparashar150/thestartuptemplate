@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  basePath: "/docs",
+  basePath: "/blogs",
   transpilePackages: ["@repo/ui"],
   images: {
     remotePatterns: [
@@ -15,7 +15,7 @@ module.exports = {
     return [
       {
         source: "/",
-        destination: "/docs",
+        destination: "/blogs",
         permanent: false,
         basePath: false,
       },

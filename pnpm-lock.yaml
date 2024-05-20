@@ -21,7 +21,7 @@ importers:
         specifier: latest
         version: 1.13.3
 
-  apps/docs:
+  apps/blogs:
     dependencies:
       '@repo/ui':
         specifier: workspace:*

@@ -26,8 +26,8 @@ const routeList: RouteProps[] = [
     label: "Demo",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "/blogs",
+    label: "Blogs",
   },
   {
     href: "#pricing",
@@ -71,7 +71,7 @@ const Navbar = () => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    The Startup
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
