@@ -1,4 +1,5 @@
-import { FrequentlyAskedQuestions, Newsletter, Partners } from "./types";
+import { Icons } from "@repo/ui/components/icons";
+import { Footer, FrequentlyAskedQuestions, Newsletter, Partners } from "./types";
 
 const PARTNERS: Partners = {
   title: "Tools and Technologies",
@@ -73,4 +74,44 @@ const FREQUENTLY_ASKED_QUESTIONS: FrequentlyAskedQuestions = {
   ],
 };
 
-export { FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS };
+const FOOTER: Footer = {
+  brand: [
+    {
+      href: "/",
+      target: "_self",
+      icon: Icons.logo,
+      label: "The Startup",
+    },
+  ],
+  Resources: [
+    {
+      href: "/",
+      target: "_self",
+      label: "Documentation",
+    },
+    {
+      href: "/",
+      target: "_self",
+      label: "Frequency Asked Questions",
+    },
+  ],
+  "Connect with me": [
+    {
+      href: "mailto:nparashar150@gmail.com",
+      target: "_self",
+      label: "Email: nparashar150@gmail.com",
+    },
+    {
+      href: "https://github.com/nparashar150",
+      target: "_blank",
+      label: "GitHub: nparashar150",
+    },
+    {
+      href: "https://twitter.com/nparashar150",
+      target: "_blank",
+      label: "Twitter: @nparashar150",
+    },
+  ],
+};
+
+export { FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS, FOOTER };

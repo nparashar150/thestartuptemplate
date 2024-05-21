@@ -111,4 +111,4 @@ type Section<T extends object> = {
   subtitle: string;
 } & T;
 
-interface FooterItem extends NavbarItem {}
+interface FooterItem extends Partial<NavbarItem> {}
