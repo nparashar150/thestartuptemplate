@@ -1,4 +1,35 @@
-import { FrequentlyAskedQuestions, Newsletter } from "./types";
+import { FrequentlyAskedQuestions, Newsletter, Partners } from "./types";
+
+const PARTNERS: Partners = {
+  title: "Tools and Technologies",
+  subtitle: "List of tools and technologies used in The Startup Template",
+  partners: [
+    {
+      name: "Next.js",
+      logoUrl: "/next-js.svg",
+    },
+    {
+      name: "EdgeDB",
+      logoUrl: "/edb.png",
+    },
+    {
+      name: "Turborepo",
+      logoUrl: "/turborepo.png",
+    },
+    {
+      name: "Next Auth",
+      logoUrl: "/next-auth.png",
+    },
+    {
+      name: "ShadcnUI",
+      logoUrl: "/shadcn.png",
+    },
+    {
+      name: "Mailgun",
+      logoUrl: "/mailgun.svg",
+    },
+  ],
+};
 
 const NEWSLETTER_CONFIG: Newsletter = {
   buttonText: "Subscribe",
@@ -42,4 +73,4 @@ const FREQUENTLY_ASKED_QUESTIONS: FrequentlyAskedQuestions = {
   ],
 };
 
-export { NEWSLETTER_CONFIG, FREQUENTLY_ASKED_QUESTIONS };
+export { FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS };
