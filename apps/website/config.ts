@@ -1,5 +1,5 @@
 import { Icon, Icons } from "@repo/ui/components/icons";
-import { Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
+import { About, Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
 
 const NAVBAR: Navbar = {
   leftLinks: [
@@ -68,6 +68,31 @@ const PARTNERS: Partners = {
   ],
 };
 
+const ABOUT: About = {
+  title: "About The Startup Template",
+  subtitle:
+    "This is a pre-built template using Next.js, EdgeDB, Turborepo, Next Auth, ShadcnUI and Mailgun to help you quickly set up and launch your app. It includes a beautiful landing page, a dashboard, and essential integrations, saving you time and effort.",
+  aboutImage: "https://raw.githubusercontent.com/leoMirandaa/shadcn-landing-page/main/src/assets/pilot.png",
+  stats: [
+    {
+      title: "Downloads",
+      count: 90,
+    },
+    {
+      title: "Users",
+      count: 10,
+    },
+    {
+      title: "Stars",
+      count: 2,
+    },
+    {
+      title: "Products",
+      count: 1,
+    },
+  ],
+};
+
 const FEATURE_CARDS: FeatureCards = {
   title: "Accelerate your development and engagement",
   subtitle: "Seamlessly integrate authentication, notifications, data management, and SEO optimization",
@@ -92,7 +117,7 @@ const FEATURE_CARDS: FeatureCards = {
       icon: Icons.trendingUp,
       title: "SEO Optimization",
       description: "Improve visibility and rankings in search engine results with built-in SEO optimization tools.",
-    }
+    },
   ],
 };
 
@@ -191,5 +216,5 @@ const FOOTER: Footer = {
   ],
 };
 
-export { BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
+export { ABOUT, BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
 
