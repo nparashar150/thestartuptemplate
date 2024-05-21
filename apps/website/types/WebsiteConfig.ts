@@ -51,10 +51,10 @@ interface Footer {
 }
 
 interface NavbarItem {
-  icon: Icon;
-  label: string;
-  target: string;
-  href: HTMLAttributeAnchorTarget;
+  icon?: Icon;
+  label?: string;
+  href?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 interface Partner {
@@ -111,4 +111,4 @@ type Section<T extends object> = {
   subtitle: string;
 } & T;
 
-interface FooterItem extends Partial<NavbarItem> {}
+interface FooterItem extends NavbarItem {}

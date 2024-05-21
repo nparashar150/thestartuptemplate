@@ -1,5 +1,41 @@
-import { Icons } from "@repo/ui/components/icons";
-import { Footer, FrequentlyAskedQuestions, Newsletter, Partners } from "./types";
+import { Icon, Icons } from "@repo/ui/components/icons";
+import { Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
+
+const NAVBAR: Navbar = {
+  leftLinks: [
+    {
+      href: "/",
+      target: "_self",
+      icon: Icons.logo,
+      label: "'The Startup'",
+    },
+  ],
+  centerLinks: [
+    {
+      href: "/dashboard",
+      target: "_self",
+      label: "Demo",
+    },
+    {
+      href: "/blogs",
+      target: "_blank",
+      label: "Blogs",
+    },
+    {
+      href: "/#faq",
+      target: "_self",
+      label: "FAQ",
+    },
+  ],
+  rightLinks: [
+    {
+      label: "Github",
+      target: "_blank",
+      icon: Icons.gitHub as Icon,
+      href: "https://github.com/nparashar150/thestartuptemplate"
+    }
+  ]
+};
 
 const PARTNERS: Partners = {
   title: "Tools and Technologies",
@@ -80,7 +116,7 @@ const FOOTER: Footer = {
       href: "/",
       target: "_self",
       icon: Icons.logo,
-      label: "The Startup",
+      label: "'The Startup'",
     },
   ],
   Resources: [
@@ -114,4 +150,4 @@ const FOOTER: Footer = {
   ],
 };
 
-export { FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS, FOOTER };
+export { NAVBAR, FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS, FOOTER };

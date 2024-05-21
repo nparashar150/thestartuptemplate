@@ -1,43 +1,11 @@
-import { useState } from "react";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@repo/ui/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@repo/ui/components/ui/sheet";
-import { buttonVariants } from "@repo/ui/components/ui/button";
 import { Icons } from "@repo/ui/components/icons";
+import { buttonVariants } from "@repo/ui/components/ui/button";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@repo/ui/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@repo/ui/components/ui/sheet";
+import Link from "next/link";
+import { useState } from "react";
+import { NAVBAR } from "../../config";
 import ThemeToggle from "./ThemeToggle";
-
-interface RouteProps {
-  href: string;
-  label: string;
-}
-
-const routeList: RouteProps[] = [
-  {
-    href: "/dashboard",
-    label: "Demo",
-  },
-  {
-    href: "/blogs",
-    label: "Blogs",
-  },
-  {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -46,58 +14,40 @@ const Navbar = () => {
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            <a
-              rel="noreferrer noopener"
-              href="/"
-              className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2"
-            >
-              <Icons.logo />
-              The Startup
-            </a>
+            {NAVBAR?.leftLinks?.map(({ href = "", label, target }) => (
+              <Link key={label} href={href} target={target} className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2">
+                <Icons.logo />
+                {label}
+              </Link>
+            ))}
           </NavigationMenuItem>
 
           {/* mobile */}
           <span className="flex md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2">
-                <Icons.menu
-                  className="flex md:hidden h-5 w-5"
-                  onClick={() => setIsOpen(true)}
-                >
+              <SheetTrigger className="px-2 w-fit inline-flex justify-center items-center gap-2">
+                <ThemeToggle />
+                <Icons.menu className="flex md:hidden h-5 w-5" onClick={() => setIsOpen(true)}>
                   <span className="sr-only">Menu Icon</span>
                 </Icons.menu>
               </SheetTrigger>
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    The Startup
-                  </SheetTitle>
+                  <SheetTitle className="font-bold text-xl">The Startup</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
-                    <a
-                      rel="noreferrer noopener"
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: "ghost" })}
-                    >
+                  {NAVBAR?.centerLinks?.map(({ href = "", label, target }) => (
+                    <Link key={label} href={href} target={target} className={buttonVariants({ variant: "ghost" })}>
                       {label}
-                    </a>
+                    </Link>
                   ))}
-                  <a
-                    rel="noreferrer noopener"
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    <Icons.gitHub className="mr-2 w-5 h-5" />
-                    Github
-                  </a>
-                  <ThemeToggle />
+                  {NAVBAR?.rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
+                    <Link key={label} href={href} target={target} className={`w-[110px] border ${buttonVariants({ variant: "secondary" })}`}>
+                      {Icon && <Icon className="mr-2 w-5 h-5" />}
+                      {label}
+                    </Link>
+                  ))}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -105,30 +55,27 @@ const Navbar = () => {
 
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
+            {NAVBAR?.centerLinks?.map(({ href = "", label, target }) => (
+              <Link
+                key={label}
+                href={href}
+                target={target}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
-                {route.label}
-              </a>
+                {label}
+              </Link>
             ))}
           </nav>
 
           <div className="hidden md:flex gap-2">
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/nparashar150/thestartuptemplate"
-              target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
-            >
-              <Icons.gitHub className="mr-2 w-5 h-5" />
-              Github
-            </a>
+            {NAVBAR?.rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
+              <Link key={label} href={href} target={target} className={`border ${buttonVariants({ variant: "secondary" })}`}>
+                {Icon && <Icon className="mr-2 w-5 h-5" />}
+                {label}
+              </Link>
+            ))}
             <ThemeToggle />
           </div>
         </NavigationMenuList>
