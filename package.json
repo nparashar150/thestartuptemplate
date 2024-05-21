@@ -20,7 +20,6 @@
     "ui:add": "pnpm --filter @repo/ui ui:add",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate": "pnpm --filter @repo/db generate",
-    "publish": "pnpm version patch && pnpm publish --access=public",
     "db:migration:create": "pnpm --filter @repo/db migration:create"
   },
   "devDependencies": {
