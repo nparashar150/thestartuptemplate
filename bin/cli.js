@@ -1,30 +1,44 @@
 #!/usr/bin/env node
-const { execSync } = require("child_process");
+import { execSync } from "child_process";
+import chalk from "chalk";
+
+const log = console.log;
 
 const runCommand = (command) => {
   try {
     execSync(command, { stdio: "inherit" });
   } catch (error) {
-    console.error(`Failed to execute command: ${command}`, error);
+    log(chalk.red(`Failed to execute command: ${command}`));
     return false;
   }
 
   return true;
 };
 
-const repoName = process.argv[2];
+const repoName = process.argv[2] || "thestartuptemplate";
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/nparashar150/thestartuptemplate ${repoName}`;
 const installCommand = `cd ${repoName} && pnpm install`;
+const dbPath = `cd ${repoName}/packages/db`
 
-console.log(`Cloning the repository...`);
+log(chalk.bold.green(`Cloning the repository...`));
 const checkOut = runCommand(gitCheckoutCommand);
 
 if (!checkOut) process.exit(-1);
 
-console.log(`Installing dependencies...`);
+log(chalk.green(`Installing dependencies...`));
 const install = runCommand(installCommand);
 
 if (!install) process.exit(-1);
 
-console.log(`All done!`);
-console.log(`cd ${repoName} && pnpm start`);
+log(chalk.green(`Setting up EdgeDB...`));
+const edgedbGenerate = runCommand(`${dbPath} && pnpm generate`);
+if (!edgedbGenerate) process.exit(-1);
+
+log(chalk.green(`Cloning env example...`));
+runCommand("pwd")
+runCommand(`cd ${repoName} && cp env.example .env`);
+runCommand(`cd ${repoName} && cp env.example apps/website/.env`);
+
+log(chalk.green(`All done!`));
+log(chalk.green(`cd ${repoName} && pnpm dev`));
+log(chalk.green(`Happy coding!`));
