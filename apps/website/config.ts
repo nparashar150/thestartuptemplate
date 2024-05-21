@@ -1,5 +1,5 @@
 import { Icon, Icons } from "@repo/ui/components/icons";
-import { Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
+import { Banner, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
 
 const NAVBAR: Navbar = {
   leftLinks: [
@@ -32,9 +32,9 @@ const NAVBAR: Navbar = {
       label: "Github",
       target: "_blank",
       icon: Icons.gitHub as Icon,
-      href: "https://github.com/nparashar150/thestartuptemplate"
-    }
-  ]
+      href: "https://github.com/nparashar150/thestartuptemplate",
+    },
+  ],
 };
 
 const PARTNERS: Partners = {
@@ -66,6 +66,19 @@ const PARTNERS: Partners = {
       logoUrl: "/mailgun.svg",
     },
   ],
+};
+
+const BANNER: Banner = {
+  title: "Accelerate your project, launch faster, and succeed",
+  subtitle: "Effortlessly integrate auth, db, and email communication. Spend more time building your product, less on integrations. Get the tools you need to launch quickly with ease.",
+  primaryButtonText: "Request a Demo",
+  secondaryButtonText: "View all features",
+  onPrimaryButtonClick: () => {
+    window.location.href = "/dashboard";
+  },
+  onSecondaryButtonClick: () => {
+    window.location.href = "/#features";
+  },
 };
 
 const NEWSLETTER_CONFIG: Newsletter = {
@@ -150,4 +163,5 @@ const FOOTER: Footer = {
   ],
 };
 
-export { NAVBAR, FREQUENTLY_ASKED_QUESTIONS, NEWSLETTER_CONFIG, PARTNERS, FOOTER };
+export { BANNER, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
+
