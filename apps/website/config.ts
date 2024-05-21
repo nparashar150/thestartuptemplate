@@ -1,5 +1,5 @@
 import { Icon, Icons } from "@repo/ui/components/icons";
-import { Banner, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
+import { Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
 
 const NAVBAR: Navbar = {
   leftLinks: [
@@ -65,6 +65,34 @@ const PARTNERS: Partners = {
       name: "Mailgun",
       logoUrl: "/mailgun.svg",
     },
+  ],
+};
+
+const FEATURE_CARDS: FeatureCards = {
+  title: "Accelerate your development and engagement",
+  subtitle: "Seamlessly integrate authentication, notifications, data management, and SEO optimization",
+  tags: [],
+  features: [
+    {
+      icon: Icons.keyRound,
+      title: "Authentication",
+      description: "Simplify development by integrating customizable user authentication features effortlessly.",
+    },
+    {
+      icon: Icons.atSign,
+      title: "Email Notifications",
+      description: "ImpEnhance user engagement with automated email alerts for important events.",
+    },
+    {
+      icon: Icons.databaseZap,
+      title: "Data Management",
+      description: "Efficiently manage and store user data with robust database solutions.",
+    },
+    {
+      icon: Icons.trendingUp,
+      title: "SEO Optimization",
+      description: "Improve visibility and rankings in search engine results with built-in SEO optimization tools.",
+    }
   ],
 };
 
@@ -163,5 +191,5 @@ const FOOTER: Footer = {
   ],
 };
 
-export { BANNER, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
+export { BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
 

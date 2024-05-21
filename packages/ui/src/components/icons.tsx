@@ -2,6 +2,7 @@ import {
   AlertTriangle,
   ArrowRight,
   ArrowUpToLine,
+  AtSign,
   Bird,
   Book,
   Bot,
@@ -14,11 +15,13 @@ import {
   Command,
   CornerDownLeft,
   CreditCard,
+  DatabaseZap,
   File,
   FileText,
   GiftIcon,
   HelpCircle,
   Image,
+  KeyRound,
   Laptop,
   LayoutDashboardIcon,
   LifeBuoy,
@@ -44,7 +47,9 @@ import {
   Share,
   SquareUser,
   SunMedium,
+  Terminal,
   Trash,
+  TrendingUp,
   Triangle,
   Turtle,
   Twitter,
@@ -53,7 +58,6 @@ import {
   UserX2Icon,
   WalletIcon,
   X,
-  Terminal,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -112,6 +116,10 @@ export const Icons = {
   triangle: Triangle,
   terminal: Terminal,
   turtle: Turtle,
+  keyRound: KeyRound,
+  atSign: AtSign,
+  databaseZap: DatabaseZap,
+  trendingUp: TrendingUp,
   linkedin: ({ ...props }: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
