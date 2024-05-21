@@ -20,7 +20,7 @@ const triggerEmail = async ({
   data.append("subject", subject);
   data.append("template", template);
   data.append("o:tracking-opens", "yes");
-  data.append('h:X-Mailgun-Variables', JSON.stringify(variables));
+  data.append("h:X-Mailgun-Variables", JSON.stringify(variables));
 
   let config = {
     method: "post",

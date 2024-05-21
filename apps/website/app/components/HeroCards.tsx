@@ -133,7 +133,7 @@ const HeroCards = () => {
         </CardHeader>
 
         <CardContent>
-          <Button className="w-full">Start Free Trial</Button>
+          <Button className="w-full" variant="outline">Start Free Trial</Button>
         </CardContent>
 
         <hr className="w-4/5 m-auto mb-4" />

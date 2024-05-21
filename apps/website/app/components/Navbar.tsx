@@ -22,7 +22,7 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "/?mode=demo",
+    href: "/dashboard",
     label: "Demo",
   },
   {

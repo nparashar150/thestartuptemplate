@@ -16,7 +16,7 @@ import Sponsors from "./components/Sponsors";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 
-export default function Page() {
+const Page = () => {
   return (
     <>
       <Navbar />
@@ -36,4 +36,6 @@ export default function Page() {
       <ScrollToTop />
     </>
   );
-}
+};
+
+export default Page;
