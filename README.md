@@ -7,7 +7,7 @@ Welcome to **The Startup Template**! This template is designed to help you kicks
 ## Features
 
 - **Production-Ready**: Beautiful landing page and dashboard ready for production use.
-- **Integrated Tech Stack**: Pre-configured with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
+- **Integrated Tech Stack**: Pre-configured with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), [Mailgun](https://www.mailgun.com/), and [NextAuth](https://next-auth.js.org/).
 - **Reusable Components**: A variety of components to reuse and customize.
 - **Focus on MVP**: Allows you to focus on building your MVP without worrying about the initial setup.
 
@@ -55,7 +55,7 @@ Feel free to customize the template according to your needs. You can modify the 
 
 **What is included in the template?**
 
-- The template includes a beautiful landing page, a dashboard, and integrations with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
+- The template includes a beautiful landing page, a dashboard, and integrations with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), [Mailgun](https://www.mailgun.com/), and [NextAuth](https://next-auth.js.org/).
 
 **How do I customize the template?**
 
