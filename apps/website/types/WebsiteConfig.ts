@@ -24,7 +24,7 @@ export type {
   Stat,
   Team,
   Testimonial,
-  Testimonials,
+  Testimonials
 };
 
 type Partners = Section<{ partners: Partner[] }>;
@@ -37,7 +37,7 @@ type Testimonials = Section<{ testimonials: Testimonial[] }>;
 type Team = Section<{ members: Member[] }>;
 type Pricing = Section<{ plans: PricingCard[] }>;
 type Newsletter = Section<{ buttonText: string; inputPlaceholder: string }>;
-type FrequentlyAskedQuestions = Section<{ items: FrequentlyAskedQuestionItem[] }>;
+type FrequentlyAskedQuestions = Section<{ contactEmail: string; items: FrequentlyAskedQuestionItem[] }>;
 
 interface Navbar {
   leftLinks: NavbarItem[];
@@ -101,6 +101,7 @@ interface PricingCard {
 }
 
 interface FrequentlyAskedQuestionItem {
+  key: string;
   question: string;
   answer: React.ReactNode;
 }
