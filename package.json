@@ -1,8 +1,8 @@
 {
   "name": "create-thestartuptemplate",
-  "version": "0.0.3",
+  "version": "0.0.3-2",
   "license": "MIT",
-  "bin": "bin/cli.js",
+  "bin": "bin/cli.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/nparashar150/thestartuptemplate"
