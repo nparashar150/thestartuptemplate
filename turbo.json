@@ -17,7 +17,7 @@
     "GITHUB_ID",
     "GITHUB_SECRET",
     "NEXTAUTH_SECRET",
-    "DOCS_URL",
+    "BLOGS_URL",
     "MAILGUN_DOMAIN",
     "MAILGUN_SENDER_EMAIL"
   ],
@@ -38,7 +38,7 @@
         "GITHUB_ID",
         "GITHUB_SECRET",
         "NEXTAUTH_SECRET",
-        "DOCS_URL",
+        "BLOGS_URL",
         "MAILGUN_DOMAIN",
         "MAILGUN_SENDER_EMAIL"
       ],
