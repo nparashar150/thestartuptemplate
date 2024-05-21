@@ -16,10 +16,11 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "build": "turbo build",
+    "db:watch": "pnpm watch",
     "ui:add": "pnpm --filter @repo/ui ui:add",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "db:watch": "pnpm watch",
     "db:generate": "pnpm --filter @repo/db generate",
+    "publish": "pnpm version patch && pnpm publish --access=public",
     "db:migration:create": "pnpm --filter @repo/db migration:create"
   },
   "devDependencies": {
