@@ -37,6 +37,14 @@ const NAVBAR: Navbar = {
   ],
 };
 
+const HERO = {
+  pretitle: "Introducing The Startup Template",
+  title: "The Startup Template",
+  subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
+  primaryButtonText: "npx create-thestartuptemplate my-app",
+  secondaryButtonText: "Demo",
+};
+
 const PARTNERS: Partners = {
   title: "Tools and Technologies",
   subtitle: "List of tools and technologies used in The Startup Template",
@@ -216,5 +224,5 @@ const FOOTER: Footer = {
   ],
 };
 
-export { ABOUT, BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
+export { ABOUT, BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, HERO, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
 

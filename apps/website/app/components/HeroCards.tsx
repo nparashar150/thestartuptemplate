@@ -15,7 +15,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/components/ui/card";
-import Image from "next/image";
 
 const HeroCards = () => {
   return (
@@ -40,17 +39,7 @@ const HeroCards = () => {
 
       {/* Team */}
       <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
-        <CardHeader className="mt-8 flex justify-center items-center pb-2">
-          <div className="rounded-full w-24 h-24 z-10 absolute grayscale-[0%] -top-12">
-            <Image
-              width={96}
-              height={96}
-              alt="user avatar"
-              src="https://avatars.githubusercontent.com/u/63806451?v=4"
-              className="rounded-full w-24 h-24 aspect-square object-cover"
-            />
-            <BorderBeam />
-          </div>
+        <CardHeader className="flex justify-center items-center pb-2">
           <CardTitle className="text-center">Naman Parashar</CardTitle>
           <CardDescription className="font-normal text-primary">
             Product Developer
@@ -154,7 +143,7 @@ const HeroCards = () => {
       </Card>
 
       {/* Service */}
-      <Card className="absolute w-[350px] -right-[10px] bottom-[35px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+      <Card className="absolute w-[350px] -right-[10px] bottom-[70px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
           <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
             <Icons.lightbulbIcon />

@@ -23,12 +23,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <ThemeProvider
-            enableSystem
-            attribute="class"
-            defaultTheme="system"
-            disableTransitionOnChange
-          >
+          <ThemeProvider enableSystem attribute="class" defaultTheme="system" disableTransitionOnChange>
             <div className="min-h-screen font-sans antialiased">{children}</div>
           </ThemeProvider>
         </SessionProvider>
