@@ -54,4 +54,14 @@ module default {
 
         constraint exclusive on (.email);
     }
+
+    type TemplateConfig {
+        required creator: Person;
+        required content: json;
+        required created_at: datetime {default := datetime_current()};
+        required updated_at: datetime {default := datetime_current()};
+        required is_archived: bool {default := false};
+
+        constraint exclusive on (.creator);
+    }
 }
