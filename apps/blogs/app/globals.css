@@ -18,16 +18,62 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+
+  ul {
+    @apply list-disc pl-4 my-3;
+  }
+
+  ol {
+    @apply list-decimal pl-4 my-3;
+  }
+
+  a {
+    @apply text-blue-500;
+  }
+
+  p {
+    @apply my-3;
+  }
+
+  h1 {
+    @apply text-xl mb-8 leading-tight;
+  }
+
+  h2 {
+    @apply text-lg mb-6 leading-tight;
+  }
+
+  h3 {
+    @apply text-base mb-4 leading-tight font-bold;
+  }
+
+  h4 {
+    @apply text-base mb-4 leading-tight;
+  }
+
+  h5 {
+    @apply text-sm mb-2 leading-tight;
+  }
+
+  h6 {
+    @apply text-xs mb-2 leading-tight;
+  }
+
+  code {
+    @apply p-0.5 border border-red-200 rounded-sm text-red-400 bg-gray-200;
+  }
+
+  blockquote {
+    @apply px-2 py-1.5 bg-gray-200 border-l-4 border-gray-400 mb-4;
   }
 }
