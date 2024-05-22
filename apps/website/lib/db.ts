@@ -36,7 +36,13 @@ const getOrCreateUser = async (user: GetOrCreateUserProps) => {
   return { ...person, is_new: false };
 };
 
-export { getOrCreateUser };
+
+const subscribeToNewsletter = async (email: string) => {
+  const newsletterSubscriber = await edgeql.insert(edgeql.NewsletterSubscription, { email }).unlessConflict().run(client);
+  return newsletterSubscriber;
+};
+
+export { getOrCreateUser, subscribeToNewsletter };
 
 interface GetOrCreateUserProps {
   email: string;
