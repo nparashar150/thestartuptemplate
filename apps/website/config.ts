@@ -26,6 +26,11 @@ const NAVBAR: Navbar = {
       target: "_self",
       label: "FAQ",
     },
+    {
+      href: "https://github.com/nparashar150/thestartuptemplate/blob/main/CONTRIBUTING.md",
+      target: "_blank",
+      label: "Contribute",
+    }
   ],
   rightLinks: [
     {

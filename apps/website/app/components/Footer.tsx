@@ -34,12 +34,11 @@ const Footer = () => {
         })}
       </section>
 
-      <section className="container pb-12 text-center">
+      <section className="container pb-6 text-muted-foreground text-center">
         <h3>
-          &copy; 2024 Landing page designed by&nbsp;
-          <a rel="noreferrer noopener" target="_blank" href="https://github.com/leoMirandaa/shadcn-landing-page" className="text-primary underline underline-offset-4 transition-all border-primary">
-            Leo Miranda
-          </a>
+          Super credits to&nbsp;
+          <a className="underline underline-offset-4" href="https://github.com/leoMirandaa" target="_blank">Leopoldo Miranda</a>
+          &nbsp;for this awesome creation In perpetual β
         </h3>
       </section>
     </footer>
