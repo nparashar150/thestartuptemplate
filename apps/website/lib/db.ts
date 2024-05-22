@@ -12,7 +12,6 @@ const getOrCreateUser = async (user: GetOrCreateUserProps) => {
     const newUserBody = {
       password: "",
       email: user.email,
-      marketing_consent: false,
       avatar: user.image || "",
       first_name: user.name.split(" ")[0] || "",
       last_name: user.name.split(" ").slice(1).join(" ") || "",
