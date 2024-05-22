@@ -3,18 +3,18 @@ import { buttonVariants } from "@repo/ui/components/ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@repo/ui/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@repo/ui/components/ui/sheet";
 import Link from "next/link";
-import { useState } from "react";
-import { NAVBAR } from "../../config";
+import { FC, useState } from "react";
+import type { Navbar as NavbarProps } from "../../types";
 import ThemeToggle from "./ThemeToggle";
 
-const Navbar = () => {
+const Navbar: FC<NavbarProps> = ({ leftLinks = [], centerLinks = [], rightLinks = [] }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            {NAVBAR?.leftLinks?.map(({ href = "", label, target }) => (
+            {leftLinks?.map(({ href = "", label, target }) => (
               <Link key={label} href={href} target={target} className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2">
                 <Icons.logo />
                 {label}
@@ -37,12 +37,12 @@ const Navbar = () => {
                   <SheetTitle className="font-bold text-xl">The Startup</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {NAVBAR?.centerLinks?.map(({ href = "", label, target }) => (
+                  {centerLinks?.map(({ href = "", label, target }) => (
                     <Link key={label} href={href} target={target} className={buttonVariants({ variant: "ghost" })}>
                       {label}
                     </Link>
                   ))}
-                  {NAVBAR?.rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
+                  {rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
                     <Link key={label} href={href} target={target} className={`w-[110px] border ${buttonVariants({ variant: "secondary" })}`}>
                       {Icon && <Icon className="mr-2 w-5 h-5" />}
                       {label}
@@ -55,7 +55,7 @@ const Navbar = () => {
 
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
-            {NAVBAR?.centerLinks?.map(({ href = "", label, target }) => (
+            {centerLinks?.map(({ href = "", label, target }) => (
               <Link
                 key={label}
                 href={href}
@@ -70,7 +70,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex gap-2">
-            {NAVBAR?.rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
+            {rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
               <Link key={label} href={href} target={target} className={`border ${buttonVariants({ variant: "secondary" })}`}>
                 {Icon && <Icon className="mr-2 w-5 h-5" />}
                 {label}
