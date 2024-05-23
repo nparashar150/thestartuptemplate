@@ -13,7 +13,7 @@ const NAVBAR: Navbar = {
     {
       href: "/dashboard",
       target: "_self",
-      label: "Demo",
+      label: "Playground",
     },
     {
       href: "/blogs",
@@ -136,13 +136,13 @@ const FEATURE_CARDS: FeatureCards = {
 const BANNER: Banner = {
   title: "Accelerate your project, launch faster, and succeed",
   subtitle: "Effortlessly integrate auth, db, and email communication. Spend more time building your product, less on integrations. Get the tools you need to launch quickly with ease.",
-  primaryButtonText: "Request a Demo",
-  secondaryButtonText: "View all features",
+  primaryButtonText: "Playground",
+  secondaryButtonText: "Blogs",
   onPrimaryButtonClick: () => {
     window.location.href = "/dashboard";
   },
   onSecondaryButtonClick: () => {
-    window.location.href = "/#features";
+    window.location.href = "/blogs";
   },
 };
 
