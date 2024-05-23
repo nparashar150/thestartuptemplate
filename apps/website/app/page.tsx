@@ -37,18 +37,18 @@ const Page = () => {
 
   return (
     <>
-      <Navbar {...configState?.NAVBAR} />
-      <Hero {...configState?.HERO} />
-      <Partners {...configState?.PARTNERS} />
-      <About {...configState?.ABOUT} />
-      <HowItWorks {...configState?.FEATURE_CARDS} />
+      {configState?.NAVBAR && <Navbar {...configState?.NAVBAR} />}
+      {configState?.HERO && <Hero {...configState?.HERO} />}
+      {configState?.PARTNERS && <Partners {...configState?.PARTNERS} />}
+      {configState?.ABOUT && <About {...configState?.ABOUT} />}
+      {configState?.FEATURE_CARDS && <HowItWorks {...configState?.FEATURE_CARDS} />}
       {/* <Features /> */}
       {/* <Services /> */}
-      <Cta {...configState?.BANNER} />
+      {configState?.BANNER && <Cta {...configState?.BANNER} />}
       {/* <Testimonials /> */}
-      <Newsletter {...configState?.NEWSLETTER_CONFIG} />
-      <FAQ {...configState?.FREQUENTLY_ASKED_QUESTIONS} />
-      <Footer {...configState?.FOOTER} />
+      {configState?.NEWSLETTER_CONFIG && <Newsletter {...configState?.NEWSLETTER_CONFIG} />}
+      {configState?.FREQUENTLY_ASKED_QUESTIONS && <FAQ {...configState?.FREQUENTLY_ASKED_QUESTIONS} />}
+      {configState?.FOOTER && <Footer {...configState?.FOOTER} />}
       <ScrollToTop />
     </>
   );
