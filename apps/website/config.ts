@@ -1,4 +1,4 @@
-import { About, Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
+import { About, Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Hero, Navbar, Newsletter, Partners } from "./types";
 
 const NAVBAR: Navbar = {
   leftLinks: [
@@ -41,11 +41,11 @@ const NAVBAR: Navbar = {
   ],
 };
 
-const HERO = {
+const HERO: Hero = {
   pretitle: "Introducing The Startup Template",
-  title: "The Startup Template",
+  title: "{{Simplify}}  your side {{hustle}}  journey",
   subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
-  primaryButtonText: "npx create-thestartuptemplate@latest my-app",
+  primaryButtonText: "npx create-thestartuptemplate@latest",
   secondaryButtonText: "Demo",
 };
 
@@ -228,5 +228,17 @@ const FOOTER: Footer = {
   ],
 };
 
-export { ABOUT, BANNER, FEATURE_CARDS, FOOTER, FREQUENTLY_ASKED_QUESTIONS, HERO, NAVBAR, NEWSLETTER_CONFIG, PARTNERS };
+const config = {
+  NAVBAR,
+  HERO,
+  PARTNERS,
+  ABOUT,
+  FEATURE_CARDS,
+  BANNER,
+  NEWSLETTER_CONFIG,
+  FREQUENTLY_ASKED_QUESTIONS,
+  FOOTER,
+}
+
+export default config;
 

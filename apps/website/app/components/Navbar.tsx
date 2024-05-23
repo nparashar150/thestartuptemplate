@@ -27,9 +27,9 @@ const Navbar: FC<NavbarProps> = ({ leftLinks = [], centerLinks = [], rightLinks 
 
           {/* mobile */}
           <span className="flex md:hidden">
+            <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2 w-fit inline-flex justify-center items-center gap-2">
-                <ThemeToggle />
                 <Icons.menu className="flex md:hidden h-5 w-5" onClick={() => setIsOpen(true)}>
                   <span className="sr-only">Menu Icon</span>
                 </Icons.menu>

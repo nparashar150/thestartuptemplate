@@ -5,7 +5,7 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
-import * as config from "../../../config";
+import config from "../../../config";
 import Editor from "../../components/Editor";
 import { Icons } from "@repo/ui/components/icons";
 

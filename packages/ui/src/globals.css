@@ -69,14 +69,23 @@
     color: hsl(var(--foreground));
     background: hsl(var(--accent));
   }
-  
+
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  .custom-title>span:nth-child(odd) {
+    @apply bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text;
+  }
+
+  .custom-title>span:nth-child(even) {
+    @apply bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text;
   }
 }

@@ -2,17 +2,19 @@
 
 import React, { FC } from "react";
 import { default as MonacoEditor, loader } from "@monaco-editor/react";
+import { useTheme } from "next-themes";
 
 const Editor: FC<EditorProps> = ({ value, onChange }) => {
   if (typeof window === "undefined") return null;
+  const { theme } = useTheme();
 
   loader.init().then((monaco) => {
     monaco.editor.defineTheme("the-startup-template", {
-      base: "vs-dark",
+      base: theme === "dark" ? "vs-dark" : "vs",
       inherit: true,
       rules: [],
       colors: {
-        "editor.background": "#0F1829",
+        "editor.background": theme === "dark" ? "#0F1829" : "#F9FAFB",
       },
     });
   });

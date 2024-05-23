@@ -10,8 +10,7 @@ export type {
   Footer,
   FooterItem,
   FrequentlyAskedQuestionItem,
-  FrequentlyAskedQuestions,
-  Highlights,
+  FrequentlyAskedQuestions, Hero, Highlights,
   Member,
   Navbar,
   NavbarItem,
@@ -27,6 +26,7 @@ export type {
   Testimonials
 };
 
+type Hero = Section<{ pretitle: string; title: string; subtitle: string; primaryButtonText: string; secondaryButtonText: string }>;
 type Partners = Section<{ partners: Partner[] }>;
 type About = Section<{ stats: Stat[]; aboutImage: string }>;
 type Highlights = Section<{ features: Feature[] }>;

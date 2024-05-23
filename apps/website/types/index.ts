@@ -9,6 +9,7 @@ import type {
   FooterItem,
   FrequentlyAskedQuestionItem,
   FrequentlyAskedQuestions,
+  Hero,
   Highlights,
   Member,
   Navbar,
@@ -25,7 +26,6 @@ import type {
   Testimonials,
 } from "./WebsiteConfig";
 
-export type { Person };
 export type {
   About,
   Banner,
@@ -35,19 +35,17 @@ export type {
   Footer,
   FooterItem,
   FrequentlyAskedQuestionItem,
-  FrequentlyAskedQuestions,
-  Highlights,
+  FrequentlyAskedQuestions, Hero, Highlights,
   Member,
   Navbar,
   NavbarItem,
   Newsletter,
   Partner,
-  Partners,
-  Pricing,
+  Partners, Person, Pricing,
   PricingCard,
   Social,
   Stat,
   Team,
-  Testimonial,
-  Testimonials,
+  Testimonial, Testimonials
 };
+

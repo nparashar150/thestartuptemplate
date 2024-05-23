@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import * as config from "../config";
+import config from "../config";
 import About from "./components/About";
 import Cta from "./components/Cta";
 import FAQ from "./components/FAQ";
@@ -38,7 +38,7 @@ const Page = () => {
   return (
     <>
       <Navbar {...configState?.NAVBAR} />
-      <Hero />
+      <Hero {...configState?.HERO} />
       <Partners {...configState?.PARTNERS} />
       <About {...configState?.ABOUT} />
       <HowItWorks {...configState?.FEATURE_CARDS} />

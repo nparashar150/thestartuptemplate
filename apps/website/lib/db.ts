@@ -1,5 +1,5 @@
 import { client, edgeql } from "@repo/db";
-import * as config from "../config";
+import config from "../config";
 
 const getOrCreateUser = async (user: GetOrCreateUserProps) => {
   const person = await edgeql
