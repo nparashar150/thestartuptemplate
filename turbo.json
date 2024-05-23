@@ -19,7 +19,9 @@
     "NEXTAUTH_SECRET",
     "BLOGS_URL",
     "MAILGUN_DOMAIN",
-    "MAILGUN_SENDER_EMAIL"
+    "MAILGUN_SENDER_EMAIL",
+    "NODE_ENV",
+    "ORIGIN_URL"
   ],
   "pipeline": {
     "build": {
@@ -40,7 +42,9 @@
         "NEXTAUTH_SECRET",
         "BLOGS_URL",
         "MAILGUN_DOMAIN",
-        "MAILGUN_SENDER_EMAIL"
+        "MAILGUN_SENDER_EMAIL",
+        "NODE_ENV",
+        "ORIGIN_URL"
       ],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
