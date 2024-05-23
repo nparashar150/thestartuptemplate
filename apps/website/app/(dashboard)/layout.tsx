@@ -5,6 +5,7 @@ import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
+import NoSSR from "../components/NoSSR";
 import SessionProvider from "../components/SessionProvider";
 
 export const metadata: Metadata = {
@@ -21,9 +22,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <div className="grid relative h-screen overflow-hidden w-full md:pl-[56px]">
           <aside className="hidden md:flex inset-y fixed left-0 z-20 h-full flex-col border-r">
             <div className="border-b p-2">
-              <Button variant="ghost" size="icon" aria-label="Home">
-                <Icons.logo className="size-5" />
-              </Button>
+              <Link href="/">
+                <Button variant="ghost" size="icon" aria-label="Home">
+                  <Icons.logo className="size-5" />
+                </Button>
+              </Link>
             </div>
             <nav className="grid gap-1 p-2">
               <Tooltip>
@@ -65,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </nav>
           </aside>
           <div className="flex flex-col">
-            {children}
+            <NoSSR>{children}</NoSSR>
           </div>
         </div>
       </TooltipProvider>
