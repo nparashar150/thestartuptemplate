@@ -7,8 +7,12 @@ import Link from "next/link";
 import { FC, useState } from "react";
 import { Hero as HeroProps } from "../../types";
 import HeroCards from "./HeroCards";
+import Image from "next/image";
+import { Happy_Monkey } from "next/font/google";
 
-const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, primaryButtonText, secondaryButtonText }) => {
+const happyMonkey = Happy_Monkey({ preload: true, weight: ["400"], subsets: ["latin"] });
+
+const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, curlyText, primaryButtonText, secondaryButtonText }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = () => {
@@ -48,7 +52,7 @@ const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, primaryButtonText, sec
           ></h1>
         </main>
         <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">{subtitle}</p>
-        <div className="mx-auto lg:mx-0 flex gap-2 flex-col-reverse lg:flex-row justify-start items-center w-fit">
+        <div className="relative mx-auto lg:mx-0 flex gap-2 flex-col-reverse lg:flex-row justify-start items-center w-fit">
           <Button className="w-fit" onClick={() => copyToClipboard()} variant={!isCopied ? "secondary" : "secondary"}>
             {!isCopied ? <Icons.clipboard className="w-4 h-4 mr-2" /> : <Icons.check className="w-4 h-4 mr-2" />}
             {primaryButtonText}
@@ -58,6 +62,12 @@ const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, primaryButtonText, sec
           <Link className="w-full" href="/dashboard">
             <Button className="w-full">{secondaryButtonText}</Button>
           </Link>
+          <div className="pointer-events-none dark:invert -scale-x-100 absolute -bottom-14 right-20 inline-flex justify-center items-center gap-1">
+            <Image src="/curly-arrow.png" width={35} height={35} alt="Curly arrow" />
+            <span style={happyMonkey.style} className="mt-10 font-bold text-black -scale-x-100 text-sm">
+              {curlyText}
+            </span>
+          </div>
         </div>
       </div>
       <div className="z-10">

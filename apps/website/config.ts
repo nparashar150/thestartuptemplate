@@ -47,6 +47,7 @@ const HERO: Hero = {
   subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
   primaryButtonText: "npx create-thestartuptemplate@latest",
   secondaryButtonText: "Playground",
+  curlyText: "try now",
 };
 
 const PARTNERS: Partners = {
@@ -151,6 +152,7 @@ const NEWSLETTER_CONFIG: Newsletter = {
   title: "Join my newsletter",
   inputPlaceholder: "pro.dev@gmail.com",
   subtitle: "Get occasional updates, tips, and tricks (I promise not to spam you, I'm too lazy for that)",
+  curlyText: "subscribe now",
 };
 
 const FREQUENTLY_ASKED_QUESTIONS: FrequentlyAskedQuestions = {

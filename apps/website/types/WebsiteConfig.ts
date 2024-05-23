@@ -10,7 +10,9 @@ export type {
   Footer,
   FooterItem,
   FrequentlyAskedQuestionItem,
-  FrequentlyAskedQuestions, Hero, Highlights,
+  FrequentlyAskedQuestions,
+  Hero,
+  Highlights,
   Member,
   Navbar,
   NavbarItem,
@@ -23,10 +25,10 @@ export type {
   Stat,
   Team,
   Testimonial,
-  Testimonials
+  Testimonials,
 };
 
-type Hero = Section<{ pretitle: string; title: string; subtitle: string; primaryButtonText: string; secondaryButtonText: string }>;
+type Hero = Section<{ pretitle: string; title: string; subtitle: string; curlyText: string; primaryButtonText: string; secondaryButtonText: string }>;
 type Partners = Section<{ partners: Partner[] }>;
 type About = Section<{ stats: Stat[]; aboutImage: string }>;
 type Highlights = Section<{ features: Feature[] }>;
@@ -36,7 +38,7 @@ type Banner = Section<{ primaryButtonText: string; onPrimaryButtonClick: () => v
 type Testimonials = Section<{ testimonials: Testimonial[] }>;
 type Team = Section<{ members: Member[] }>;
 type Pricing = Section<{ plans: PricingCard[] }>;
-type Newsletter = Section<{ buttonText: string; inputPlaceholder: string }>;
+type Newsletter = Section<{ buttonText: string; curlyText: string; inputPlaceholder: string }>;
 type FrequentlyAskedQuestions = Section<{ contactEmail: string; items: FrequentlyAskedQuestionItem[] }>;
 
 interface Navbar {
