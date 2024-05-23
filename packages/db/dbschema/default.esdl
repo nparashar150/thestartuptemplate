@@ -34,6 +34,7 @@ module default {
     type Post {
         required title: str;
         required author: Person;
+        required preview: str {default := ""}
         required content: str {default := ""}
         required is_archived: bool {default := false};
         required is_published: bool {default := false};
