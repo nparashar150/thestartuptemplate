@@ -66,9 +66,9 @@ runCommand(`cd ${repoName} && cp env.example .env`);
 runCommand(`cd ${repoName} && cp env.example apps/website/.env`);
 runCommand(`cd ${repoName} && cp env.example apps/blogs/.env`);
 
-log(`All done!\n\n`);
-log(`cd ${repoName} && pnpm dev\n\n`);
-log(`Please update the .env file with your credentials.\n\n`);
+log(`\nAll done!\n`);
+log(`cd ${repoName} && pnpm dev\n`);
+log(`Please update the .env file with your credentials.\n`);
 log(`Happy coding!`);
 
 rl.close();
