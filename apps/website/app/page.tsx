@@ -14,6 +14,7 @@ import Partners from "./components/Partners";
 import ScrollToTop from "./components/ScrollToTop";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
+import NoSSR from "./components/NoSSR";
 
 // import Features from "./components/Features"; // Uncomment this line to enable the Pricing section
 // import Services from "./components/Services"; // Uncomment this line to enable the Pricing section
@@ -36,7 +37,7 @@ const Page = () => {
   }, [email]);
 
   return (
-    <>
+    <NoSSR>
       {configState?.NAVBAR && <Navbar {...configState?.NAVBAR} />}
       {configState?.HERO && <Hero {...configState?.HERO} />}
       {configState?.PARTNERS && <Partners {...configState?.PARTNERS} />}
@@ -50,7 +51,7 @@ const Page = () => {
       {configState?.FREQUENTLY_ASKED_QUESTIONS && <FAQ {...configState?.FREQUENTLY_ASKED_QUESTIONS} />}
       {configState?.FOOTER && <Footer {...configState?.FOOTER} />}
       <ScrollToTop />
-    </>
+    </NoSSR>
   );
 };
 
