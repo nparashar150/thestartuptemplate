@@ -216,12 +216,12 @@ const FOOTER: Footer = {
   ],
   Resources: [
     {
-      href: "/",
-      target: "_self",
-      label: "Documentation",
+      href: "/blogs",
+      target: "_blank",
+      label: "Blogs",
     },
     {
-      href: "/",
+      href: "#faq",
       target: "_self",
       label: "Frequency Asked Questions",
     },
