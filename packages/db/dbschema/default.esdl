@@ -23,28 +23,30 @@ module default {
         constraint exclusive on (.email);
     }
 
-    type Transactions {
-        required amount: float64;
-        required multi user_id: Person;
-        required status: TransactionStatus;
-        required created_at: datetime {default := datetime_current()};
-        required updated_at: datetime {default := datetime_current()};
-    }
+    # TODO: remove for submission
+    # type Transactions {
+    #     required amount: float64;
+    #     required multi user_id: Person;
+    #     required status: TransactionStatus;
+    #     required created_at: datetime {default := datetime_current()};
+    #     required updated_at: datetime {default := datetime_current()};
+    # }
 
-    type Post {
-        required title: str;
-        required author: Person;
-        required preview: str {default := ""}
-        required content: str {default := ""}
-        required is_archived: bool {default := false};
-        required is_published: bool {default := false};
-        required slug: str {default := <str>uuid_generate_v4()}
-        required created_at: datetime {default := datetime_current()};
-        required updated_at: datetime {default := datetime_current()};
-        required published_at: datetime {default := datetime_current()};
+    # TODO: remove for submission
+    # type Post {
+    #     required title: str;
+    #     required author: Person;
+    #     required preview: str {default := ""}
+    #     required content: str {default := ""}
+    #     required is_archived: bool {default := false};
+    #     required is_published: bool {default := false};
+    #     required slug: str {default := <str>uuid_generate_v4()}
+    #     required created_at: datetime {default := datetime_current()};
+    #     required updated_at: datetime {default := datetime_current()};
+    #     required published_at: datetime {default := datetime_current()};
 
-        constraint exclusive on (.slug);
-    }
+    #     constraint exclusive on (.slug);
+    # }
 
     type NewsletterSubscription {
         required email: str;
