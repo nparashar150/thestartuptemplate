@@ -79,7 +79,7 @@ I welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) t
 
 ## Acknowledgements
 
-Special thanks to the team who have made this project possible:
+Special thanks to all the teams and individuals who have made this project possible:
 
 - [EdgeDB](https://www.edgedb.com/)
 - [Next.js](https://nextjs.org/)

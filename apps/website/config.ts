@@ -29,7 +29,7 @@ const NAVBAR: Navbar = {
       href: "https://github.com/nparashar150/thestartuptemplate/blob/main/CONTRIBUTING.md",
       target: "_blank",
       label: "Contribute",
-    }
+    },
   ],
   rightLinks: [
     {
@@ -46,7 +46,7 @@ const HERO: Hero = {
   title: "{{Simplify}}  your side {{hustle}}  journey",
   subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
   primaryButtonText: "npx create-thestartuptemplate@latest",
-  secondaryButtonText: "Demo",
+  secondaryButtonText: "Playground",
 };
 
 const PARTNERS: Partners = {
@@ -88,7 +88,7 @@ const ABOUT: About = {
   stats: [
     {
       title: "Downloads",
-      count: 90,
+      count: 290,
     },
     {
       title: "Users",
@@ -197,18 +197,6 @@ const FOOTER: Footer = {
       label: "'The Startup'",
     },
   ],
-  Resources: [
-    {
-      href: "/",
-      target: "_self",
-      label: "Documentation",
-    },
-    {
-      href: "/",
-      target: "_self",
-      label: "Frequency Asked Questions",
-    },
-  ],
   "Connect with me": [
     {
       href: "mailto:nparashar150@gmail.com",
@@ -226,6 +214,18 @@ const FOOTER: Footer = {
       label: "Twitter: @nparashar150",
     },
   ],
+  Resources: [
+    {
+      href: "/",
+      target: "_self",
+      label: "Documentation",
+    },
+    {
+      href: "/",
+      target: "_self",
+      label: "Frequency Asked Questions",
+    },
+  ],
 };
 
 const config = {
@@ -238,7 +238,6 @@ const config = {
   NEWSLETTER_CONFIG,
   FREQUENTLY_ASKED_QUESTIONS,
   FOOTER,
-}
+};
 
 export default config;
-
