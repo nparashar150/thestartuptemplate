@@ -32,5 +32,25 @@
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "keywords": [
+    "nextjs",
+    "edgedb",
+    "shadcnui",
+    "nextauth",
+    "startup-template",
+    "saas-template",
+    "webapp-template",
+    "boilerplate",
+    "template",
+    "javascript",
+    "typescript",
+    "tailwindcss",
+    "auth-integration",
+    "email-notifications",
+    "seo-optimization",
+    "full-stack-template",
+    "web-development",
+    "mvp"
+  ]
 }
