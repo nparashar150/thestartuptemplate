@@ -1,26 +1,57 @@
-import Link from "next/link";
-import { client, edgeql } from "@repo/db";
+import { sortPosts } from "@repo/ui/lib/utils";
+import { Metadata } from "next";
+import { posts } from "../.velite";
+import { PostItem } from "./components/PostItem";
+import { QueryPagination } from "./components/QueryPagination";
 
-export default async function Home() {
-  const selectPosts = edgeql.select(edgeql.Post, () => ({
-    id: true,
-    title: true,
-    content: true,
-  }));
-  const posts = await selectPosts.run(client);
+export const metadata: Metadata = {
+  title: "My blog",
+  description: "This is a description",
+};
+
+const POSTS_PER_PAGE = 5;
+
+interface BlogPageProps {
+  searchParams: {
+    page?: string;
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const currentPage = Number(searchParams?.page) || 1;
+  const sortedPosts = sortPosts(posts.filter((post) => post.published));
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+
+  const displayPosts = sortedPosts.slice(POSTS_PER_PAGE * (currentPage - 1), POSTS_PER_PAGE * currentPage);
 
   return (
-    <div className="container mx-auto p-4 bg-black text-white">
-      <h1 className="text-3xl font-bold mb-4">Posts</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id} className="mb-4">
-            <Link href={`/post/${post.id}`} className="text-blue-500">
-              {post.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="container max-w-4xl py-6 lg:py-10">
+      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
+        <div className="flex-1 space-y-4">
+          <h1 className="inline-block font-black text-4xl lg:text-5xl">Blog</h1>
+          <p className="text-xl text-muted-foreground">The Startup tempalte blog</p>
+        </div>
+      </div>
+      <div className="grid grid-cols-12 gap-3 mt-8">
+        <div className="col-span-12 col-start-1 sm:col-span-8">
+          <hr />
+          {displayPosts?.length > 0 ? (
+            <ul className="flex flex-col">
+              {displayPosts.map((post) => {
+                const { slug, date, title, description } = post;
+                return (
+                  <li key={slug}>
+                    <PostItem slug={slug} date={date} title={title} description={description} />
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p>Nothing to see here yet</p>
+          )}
+          <QueryPagination totalPages={totalPages} className="justify-end mt-4" />
+        </div>
+      </div>
     </div>
   );
 }
