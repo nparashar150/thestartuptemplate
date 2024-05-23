@@ -12,7 +12,7 @@ import { Happy_Monkey } from "next/font/google";
 
 const happyMonkey = Happy_Monkey({ preload: true, weight: ["400"], subsets: ["latin"] });
 
-const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, curlyText, primaryButtonText, secondaryButtonText }) => {
+const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, curlyText, primaryButtonText, secondaryButtonText, cards }) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = () => {
@@ -71,7 +71,7 @@ const Hero: FC<HeroProps> = ({ pretitle, title, subtitle, curlyText, primaryButt
         </div>
       </div>
       <div className="z-10">
-        <HeroCards />
+        <HeroCards cards={cards} />
       </div>
       <div className="shadow"></div>
     </section>

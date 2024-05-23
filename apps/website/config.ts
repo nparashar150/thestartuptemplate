@@ -48,6 +48,36 @@ const HERO: Hero = {
   primaryButtonText: "npx create-thestartuptemplate@latest",
   secondaryButtonText: "Playground",
   curlyText: "try now",
+
+  cards: {
+    tweetCard: {
+      name: "ShadcnUI",
+      username: "@shadcn",
+      avatarUrl: "https://github.com/shadcn.png",
+      tweet: "This landing page is awesome! #TheStartupTemplate",
+    },
+    pricingCard: {
+      planName: "Free",
+      badgeTitle: "Most Popular",
+      pricePerMonth: "$0",
+      description: "All the tools you need to launch fast and efficiently.",
+      features: ["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "Live Playground"],
+    },
+    serviceCard: {
+      title: "Theme Switcher",
+      description: "Give your users the choice to switch between themes effortlessly, enhancing the experience.",
+    },
+    aboutCard: {
+      name: "Naman Parashar",
+      designation: "Prodcut Developer",
+      description: "Passionate about designing & coding great user experiences on the web.",
+      socialLinks: {
+        twitter: "https://twitter.com/nparashar150",
+        linkedIn: "https://www.linkedin.com/in/nparashar150",
+        github: "https://github.com/nparashar150",
+      },
+    },
+  },
 };
 
 const PARTNERS: Partners = {

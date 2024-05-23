@@ -28,7 +28,7 @@ export type {
   Testimonials,
 };
 
-type Hero = Section<{ pretitle: string; title: string; subtitle: string; curlyText: string; primaryButtonText: string; secondaryButtonText: string }>;
+type Hero = Section<{ pretitle: string; title: string; subtitle: string; curlyText: string; primaryButtonText: string; secondaryButtonText: string; cards: { [key: string]: any } }>;
 type Partners = Section<{ partners: Partner[] }>;
 type About = Section<{ stats: Stat[]; aboutImage: string }>;
 type Highlights = Section<{ features: Feature[] }>;
