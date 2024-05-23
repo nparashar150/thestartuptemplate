@@ -1,4 +1,4 @@
-import { Icon } from "@repo/ui/components/icons";
+import { Icons } from "@repo/ui/components/icons";
 import { HTMLAttributeAnchorTarget } from "react";
 
 export type {
@@ -51,9 +51,9 @@ interface Footer {
 }
 
 interface NavbarItem {
-  icon?: Icon;
-  label?: string;
   href?: string;
+  label?: string;
+  icon?: keyof typeof Icons;
   target?: HTMLAttributeAnchorTarget;
 }
 
@@ -70,7 +70,7 @@ interface Stat {
 interface Feature {
   title: string;
   description: string;
-  icon: Icon | string;
+  icon: keyof typeof Icons;
 }
 
 interface Testimonial {
@@ -88,8 +88,8 @@ interface Member {
 }
 
 interface Social {
-  icon: Icon;
   href: string;
+  icon: keyof typeof Icons;
 }
 
 interface PricingCard {

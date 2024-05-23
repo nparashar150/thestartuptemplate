@@ -1,12 +1,11 @@
-import { Icon, Icons } from "@repo/ui/components/icons";
 import { About, Banner, FeatureCards, Footer, FrequentlyAskedQuestions, Navbar, Newsletter, Partners } from "./types";
 
 const NAVBAR: Navbar = {
   leftLinks: [
     {
       href: "/",
+      icon: "logo",
       target: "_self",
-      icon: Icons.logo,
       label: "'The Startup'",
     },
   ],
@@ -34,9 +33,9 @@ const NAVBAR: Navbar = {
   ],
   rightLinks: [
     {
+      icon: "gitHub",
       label: "Github",
       target: "_blank",
-      icon: Icons.gitHub as Icon,
       href: "https://github.com/nparashar150/thestartuptemplate",
     },
   ],
@@ -46,7 +45,7 @@ const HERO = {
   pretitle: "Introducing The Startup Template",
   title: "The Startup Template",
   subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
-  primaryButtonText: "npx create-thestartuptemplate my-app",
+  primaryButtonText: "npx create-thestartuptemplate@latest my-app",
   secondaryButtonText: "Demo",
 };
 
@@ -112,22 +111,22 @@ const FEATURE_CARDS: FeatureCards = {
   tags: [],
   features: [
     {
-      icon: Icons.keyRound,
+      icon: "keyRound",
       title: "Authentication",
       description: "Simplify development by integrating customizable user authentication features effortlessly.",
     },
     {
-      icon: Icons.atSign,
+      icon: "atSign",
       title: "Email Notifications",
       description: "ImpEnhance user engagement with automated email alerts for important events.",
     },
     {
-      icon: Icons.databaseZap,
+      icon: "databaseZap",
       title: "Data Management",
       description: "Efficiently manage and store user data with robust database solutions.",
     },
     {
-      icon: Icons.trendingUp,
+      icon: "trendingUp",
       title: "SEO Optimization",
       description: "Improve visibility and rankings in search engine results with built-in SEO optimization tools.",
     },
@@ -193,8 +192,8 @@ const FOOTER: Footer = {
   brand: [
     {
       href: "/",
+      icon: "logo",
       target: "_self",
-      icon: Icons.logo,
       label: "'The Startup'",
     },
   ],

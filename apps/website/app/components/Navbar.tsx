@@ -14,12 +14,15 @@ const Navbar: FC<NavbarProps> = ({ leftLinks = [], centerLinks = [], rightLinks 
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
           <NavigationMenuItem className="font-bold flex">
-            {leftLinks?.map(({ href = "", label, target }) => (
-              <Link key={label} href={href} target={target} className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2">
-                <Icons.logo />
-                {label}
-              </Link>
-            ))}
+            {leftLinks?.map(({ href = "", label, target, icon }) => {
+              const Icon = icon && Icons?.[icon];
+              return (
+                <Link key={label} href={href} target={target} className="ml-2 font-bold text-lg inline-flex justify-center items-center gap-2">
+                  {Icon && <Icon className="w-5 h-5" />}
+                  {label}
+                </Link>
+              );
+            })}
           </NavigationMenuItem>
 
           {/* mobile */}
@@ -42,12 +45,15 @@ const Navbar: FC<NavbarProps> = ({ leftLinks = [], centerLinks = [], rightLinks 
                       {label}
                     </Link>
                   ))}
-                  {rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
-                    <Link key={label} href={href} target={target} className={`w-[110px] border ${buttonVariants({ variant: "secondary" })}`}>
-                      {Icon && <Icon className="mr-2 w-5 h-5" />}
-                      {label}
-                    </Link>
-                  ))}
+                  {rightLinks?.map(({ href = "", label, icon, target }) => {
+                    const Icon = icon && Icons?.[icon];
+                    return (
+                      <Link key={label} href={href} target={target} className={`w-[110px] border ${buttonVariants({ variant: "secondary" })}`}>
+                        {Icon && <Icon className="mr-2 w-5 h-5" />}
+                        {label}
+                      </Link>
+                    );
+                  })}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -70,12 +76,15 @@ const Navbar: FC<NavbarProps> = ({ leftLinks = [], centerLinks = [], rightLinks 
           </nav>
 
           <div className="hidden md:flex gap-2">
-            {rightLinks?.map(({ href = "", label, icon: Icon, target }) => (
-              <Link key={label} href={href} target={target} className={`border ${buttonVariants({ variant: "secondary" })}`}>
-                {Icon && <Icon className="mr-2 w-5 h-5" />}
-                {label}
-              </Link>
-            ))}
+            {rightLinks?.map(({ href = "", label, icon, target }) => {
+              const Icon = icon && Icons?.[icon];
+              return (
+                <Link key={label} href={href} target={target} className={`border ${buttonVariants({ variant: "secondary" })}`}>
+                  {Icon && <Icon className="mr-2 w-5 h-5" />}
+                  {label}
+                </Link>
+              );
+            })}
             <ThemeToggle />
           </div>
         </NavigationMenuList>
