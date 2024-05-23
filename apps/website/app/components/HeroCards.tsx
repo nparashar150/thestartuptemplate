@@ -111,7 +111,7 @@ const HeroCards = () => {
         <hr className="w-4/5 m-auto -mt-2 mb-4" />
         <CardFooter className="flex">
           <div className="space-y-4">
-            {["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "SEO Optimization"].map((benefit: string) => (
+            {["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "Live Playground"].map((benefit: string) => (
               <span key={benefit} className="flex">
                 <Icons.check className="text-green-500" /> <h3 className="ml-2">{benefit}</h3>
               </span>

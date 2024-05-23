@@ -114,22 +114,22 @@ const FEATURE_CARDS: FeatureCards = {
     {
       icon: "keyRound",
       title: "Authentication",
-      description: "Simplify development by integrating customizable user authentication features effortlessly.",
+      description: "Simplify development by integrating authentication effortlessly.",
     },
     {
       icon: "atSign",
       title: "Email Notifications",
-      description: "ImpEnhance user engagement with automated email alerts for important events.",
+      description: "Enhance user engagement with automated email alerts for important events.",
     },
     {
       icon: "databaseZap",
       title: "Data Management",
-      description: "Efficiently manage and store user data with robust database solutions.",
+      description: "Efficiently manage and store user data with EdgeDB.",
     },
     {
-      icon: "trendingUp",
-      title: "SEO Optimization",
-      description: "Improve visibility and rankings in search engine results with built-in SEO optimization tools.",
+      icon: "code2",
+      title: "Playground",
+      description: "Experiment with the template and create your custom configurations with ease.",
     },
   ],
 };

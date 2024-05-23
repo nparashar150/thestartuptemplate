@@ -114,6 +114,12 @@ importers:
       form-data:
         specifier: ^4.0.0
         version: 4.0.0
+      logrocket:
+        specifier: ^8.1.0
+        version: 8.1.0
+      logrocket-react:
+        specifier: ^6.0.3
+        version: 6.0.3(logrocket@8.1.0)(react-dom@18.2.0)(react@18.2.0)
       monaco-themes:
         specifier: ^0.4.4
         version: 0.4.4
@@ -151,6 +157,9 @@ importers:
       '@types/eslint':
         specifier: ^8.56.1
         version: 8.56.2
+      '@types/logrocket-react':
+        specifier: ^3.0.3
+        version: 3.0.3
       '@types/node':
         specifier: ^20.10.6
         version: 20.11.6
@@ -2074,6 +2083,12 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/logrocket-react@3.0.3:
+    resolution: {integrity: sha512-fGpJV4ccwfWAL0293EQx5HrS4PGMvXBpTQOXpA/SLXSCm7fC2O19w7Y3CcgWDmyawQnqbzd8faKAL12VhPdZKA==}
+    dependencies:
+      logrocket: 1.0.1
     dev: true
 
   /@types/mdast@4.0.4:
@@ -4552,6 +4567,26 @@ packages:
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
+
+  /logrocket-react@6.0.3(logrocket@8.1.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-mU2QMFy5lfogXeAb+djy5XcAL5lAxPovRiN62lb4EzeuvuYmXJJmArniK3K2P9Gu02auWTiSwKHISFS0JH+eyA==}
+    peerDependencies:
+      logrocket: '>=2.0'
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      logrocket: 8.1.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /logrocket@1.0.1:
+    resolution: {integrity: sha512-oPA0c5GzMKsWp/6p19OaujZQMzttluqVOI+989uHeciPAljPZvGEpZRbNO3Rr+jC/8jVLJdlMP9IHuyhKsASGA==}
+    dev: true
+
+  /logrocket@8.1.0:
+    resolution: {integrity: sha512-0PRv9lnS90KBrL3mfiQzcKEPvNT3N55pRN0PRe/q3DqWFQbIW1p72MmMp9a3Qi9la6o+TXri7r68ZE0AM7vsDA==}
+    dev: false
 
   /longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
