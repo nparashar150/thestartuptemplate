@@ -8,10 +8,8 @@ const rl = readline.createInterface({ input: process.stdin, output: process.stdo
 const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
 
 const BRANCH_MAP = {
-  1: "turbo-website-blog",
-  2: "turbo-website",
-  3: "website",
-  4: "blog",
+  1: "main",
+  2: "website",
 }
 
 const runCommand = (command) => {
@@ -27,13 +25,11 @@ const runCommand = (command) => {
 
 const repoName = await prompt("Enter the name of project (default: thestartuptemplate): ") || "thestartuptemplate";
 const repoBranch = await prompt(`Which branch do you want to clone? (default: 1): 
-  1. turbo-website-blog
-  2. turbo-website
-  3. website
-  4. blog
+  1. turbo-website
+  2. website
 `) || "1";
 
-const gitCheckoutCommand = `git clone --depth 1 -b ${BRANCH_MAP[repoBranch] || "turbo-website-blog"} --single-branch https://github.com/nparashar150/thestartuptemplate ${repoName}`;
+const gitCheckoutCommand = `git clone --depth 1 -b ${BRANCH_MAP[repoBranch] || "main"} --single-branch https://github.com/nparashar150/thestartuptemplate ${repoName}`;
 const gitRemoveRemote = `cd ${repoName} && git remote remove origin`;
 const installCommand = `cd ${repoName} && pnpm install`;
 const dbPath = `cd ${repoName}/packages/db`;
