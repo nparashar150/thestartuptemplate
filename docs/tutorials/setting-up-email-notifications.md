@@ -11,14 +11,20 @@ description: >-
 1. **Sign Up for Mailgun**:
    * Go to [Mailgun](https://www.mailgun.com/) and sign up for an account.
 2. **Set Up Your Domain**:
-   * After signing up, set up your domain within the Mailgun dashboard.
+   *   After signing up, set up your [domain](https://app.mailgun.com/mg/sending/domains) within the Mailgun dashboard.
+
+       <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ## **Obtain Mailgun API Keys**
 
 1. **Retrieve Your Domain Information**:
    * Once your domain is set up, navigate to your domain settings in the Mailgun dashboard.
 2. **Get Your Domain Details**:
-   * Note down your Mailgun domain, sender email address, and API key.
+   * Note down your Mailgun domain, sender email address.
+   *   Generate Mailgun API key from [api\_security](https://app.mailgun.com/settings/api\_security) page.\
+
+
+       <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ## **Add to .env File**
 
@@ -55,12 +61,12 @@ MAILGUN_API_KEY=key-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Additional Resources
 
-* [Mailgun Documentation](https://documentation.mailgun.com/docs/mailgun/api-reference/authentication/)
+* [Mailgun Documentation](https://documentation.mailgun.com/docs/mailgun/user-manual/sending-messages/#send-via-http)
 
 ***
 
 ## Need Help?
 
-If you encounter any issues or have questions, feel free to reach out to me at nparashar150@gmail.com. If you find this project helpful, consider supporting my work [here](https://example.com/donate).
+If you have any feedback or run into any issues, don't hesitate to reach out at [nparashar150@gmail.com](mailto:nparashar150@gmail.com).&#x20;
 
 Happy coding!
