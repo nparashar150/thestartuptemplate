@@ -39,12 +39,13 @@ const Newsletter: FC<NewsletterProps> = ({ title, subtitle, buttonText, curlyTex
           <div className="pointer-events-none dark:invert -scale-x-100 absolute -bottom-14 right-1/2 md:right-14 inline-flex justify-center items-center gap-1">
             <Image src="/curly-arrow.png" width={35} height={35} alt="Curly arrow" />
             <span style={happyMonkey.style} className="mt-10 font-bold text-black -scale-x-100 text-sm">
-              {curlyText}
+              {submissionStage === "idle" && curlyText}
+              {submissionStage === "loading" && "🤔 Subscribing..."}
+              {submissionStage === "success" && <p className="text-sm text-center text-green-500">🎉 Subscribed successfully!</p>}
+              {submissionStage === "error" && <p className="text-sm text-center text-red-500">😢 Something went wrong, please try again later.</p>}
             </span>
           </div>
         </form>
-        {submissionStage === "success" && <p className="text-center text-green-500 mt-2">Subscribed successfully!</p>}
-        {submissionStage === "error" && <p className="text-center text-red-500 mt-2">Something went wrong, please try again later.</p>}
       </div>
       <hr className="w-11/12 mx-auto" />
     </section>

@@ -1,5 +1,6 @@
 import { client, edgeql } from "@repo/db";
 import config from "../config";
+import { triggerEmail } from "./mail";
 
 const getOrCreateUser = async (user: GetOrCreateUserProps) => {
   const person = await edgeql
@@ -44,7 +45,24 @@ const getOrCreateUser = async (user: GetOrCreateUserProps) => {
 };
 
 const subscribeToNewsletter = async (email: string) => {
+  const existingSubscriber = await edgeql
+    .select(edgeql.NewsletterSubscription, (subscriber) => ({
+      ...edgeql.NewsletterSubscription["*"],
+      filter_single: edgeql.op(subscriber.email, "=", email),
+    }))
+    .run(client);
+
+  if (existingSubscriber) return existingSubscriber;
+
   const newsletterSubscriber = await edgeql.insert(edgeql.NewsletterSubscription, { email }).unlessConflict().run(client);
+
+  await triggerEmail({
+    to: email,
+    variables: {},
+    subject: "Welcome to the newsletter!",
+    template: "thank you for subscribing to naman's newsletter!",
+  });
+
   return newsletterSubscriber;
 };
 
@@ -77,7 +95,7 @@ const saveTemplateConfig = async (email: string, config: string) => {
   return newTemplateConfig;
 };
 
-export { getOrCreateUser, subscribeToNewsletter, getTemplateConfig, saveTemplateConfig };
+export { getOrCreateUser, getTemplateConfig, saveTemplateConfig, subscribeToNewsletter };
 
 interface GetOrCreateUserProps {
   email: string;
