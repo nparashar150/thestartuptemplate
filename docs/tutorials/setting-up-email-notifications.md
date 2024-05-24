@@ -6,21 +6,21 @@ description: >-
 
 # Setting Up Email Notifications
 
-## **Step 1: Create a Mailgun Account**
+## **Create a Mailgun Account**
 
 1. **Sign Up for Mailgun**:
    * Go to [Mailgun](https://www.mailgun.com/) and sign up for an account.
 2. **Set Up Your Domain**:
    * After signing up, set up your domain within the Mailgun dashboard.
 
-## **Step 2: Obtain Mailgun API Keys**
+## **Obtain Mailgun API Keys**
 
 1. **Retrieve Your Domain Information**:
    * Once your domain is set up, navigate to your domain settings in the Mailgun dashboard.
 2. **Get Your Domain Details**:
    * Note down your Mailgun domain, sender email address, and API key.
 
-## **Step 3: Add to .env File**
+## **Add to .env File**
 
 1. **Open Your .env File**:
    * Open your project's `.env` file.
