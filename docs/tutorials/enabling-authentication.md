@@ -18,7 +18,11 @@ description: >-
     * Fill in the required details and create the credentials.
     * Obtain your `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
 
-    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <div align="left">
+
+    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>GCP screenshot</p></figcaption></figure>
+
+    </div>
 2.  **Add to .env File**:
 
     * Open your `.env` file and add the following:
@@ -30,17 +34,25 @@ description: >-
 
 ## &#x20;**Enable GitHub Login**
 
-1. **Create a GitHub Application**:
-   * Go to [GitHub Developer Settings](https://github.com/settings/developers).
-   * Click on "New OAuth App".
-   *   Fill in the required details and register your application.\
+1.  **Create a GitHub Application**:
 
+    * Go to [GitHub Developer Settings](https://github.com/settings/developers).
+    * Click on "New OAuth App".
+    * Fill in the required details and register your application.
 
-       <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-   *   Obtain your `GITHUB_ID` and `GITHUB_SECRET`.\
+    <div align="left">
 
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Github custom oauth app creation screen</p></figcaption></figure>
 
-       <figure><img src="../.gitbook/assets/Screenshot 2024-05-24 at 1.31.09 PM.png" alt=""><figcaption></figcaption></figure>
+    </div>
+
+    * Obtain your `GITHUB_ID` and `GITHUB_SECRET`.
+
+    <div align="left">
+
+    <figure><img src="../.gitbook/assets/Screenshot 2024-05-24 at 1.31.09 PM.png" alt=""><figcaption><p>Github custom oauth oauth app token generation</p></figcaption></figure>
+
+    </div>
 2.  **Add to .env File**:
 
     * Open your `.env` file and add the following:

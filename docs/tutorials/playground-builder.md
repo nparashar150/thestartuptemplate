@@ -20,14 +20,19 @@ layout:
 
 ## **Using the Playground**
 
-1.  **Login and head to the Playground**: After logging in, you'll land on the Playground page. This is where you can customise your project.
+1. **Login and head to the Playground**: After logging in, you'll land on the Playground page. This is where you can customise your project.
 
-    <figure><picture><source srcset="../.gitbook/assets/Screenshot 2024-05-24 at 12.35.08 PM.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2024-05-24 at 12.36.53 PM.png" alt=""></picture><figcaption><p>Playground screenshot</p></figcaption></figure>
-2. **Edit Your Settings**: Change the configuration options and see the results immediately. The Playground shows a live preview of your changes, making it easy to see how your project will look.\
+<div align="left">
 
-3. **Autosave**: Don't worry about saving your work. The Playground automatically saves your settings as you make changes, so you won't lose any progress.\
+<figure><picture><source srcset="../.gitbook/assets/Screenshot 2024-05-24 at 12.35.08 PM.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Screenshot 2024-05-24 at 12.36.53 PM.png" alt=""></picture><figcaption><p>Playground screenshot</p></figcaption></figure>
 
-4.  **Generate Your Project**: Once you're happy with your settings, generate your project by running this command in your terminal:\
+</div>
+
+1. **Edit Your Settings**: Change the configuration options and see the results immediately. The Playground shows a live preview of your changes, making it easy to see how your project will look.\
+
+2. **Autosave**: Don't worry about saving your work. The Playground automatically saves your settings as you make changes, so you won't lose any progress.\
+
+3.  **Generate Your Project**: Once you're happy with your settings, generate your project by running this command in your terminal:\
 
 
     ```bash

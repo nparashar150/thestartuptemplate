@@ -10,21 +10,30 @@ description: >-
 
 1. **Sign Up for Mailgun**:
    * Go to [Mailgun](https://www.mailgun.com/) and sign up for an account.
-2. **Set Up Your Domain**:
-   *   After signing up, set up your [domain](https://app.mailgun.com/mg/sending/domains) within the Mailgun dashboard.
+2.  **Set Up Your Domain**:
 
-       <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    * After signing up, set up your [domain](https://app.mailgun.com/mg/sending/domains) within the Mailgun dashboard.
+
+    <div align="left">
+
+    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Mailgun domains</p></figcaption></figure>
+
+    </div>
 
 ## **Obtain Mailgun API Keys**
 
 1. **Retrieve Your Domain Information**:
    * Once your domain is set up, navigate to your domain settings in the Mailgun dashboard.
-2. **Get Your Domain Details**:
-   * Note down your Mailgun domain, sender email address.
-   *   Generate Mailgun API key from [api\_security](https://app.mailgun.com/settings/api\_security) page.\
+2.  **Get Your Domain Details**:
 
+    * Note down your Mailgun domain, sender email address.
+    * Generate Mailgun API key from [api\_security](https://app.mailgun.com/settings/api\_security) page.
 
-       <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <div align="left">
+
+    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Mailgun api keys</p></figcaption></figure>
+
+    </div>
 
 ## **Add to .env File**
 
