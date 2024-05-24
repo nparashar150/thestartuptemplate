@@ -2,9 +2,9 @@ import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { Inter } from "next/font/google";
+import AnalyticsProvider from "./components/AnalyticsProvider";
 import SessionProvider from "./components/SessionProvider";
 import { ThemeProvider } from "./components/ThemeProviders";
-import AnalyticsProvider from "./components/AnalyticsProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

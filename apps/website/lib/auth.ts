@@ -54,7 +54,7 @@ const AuthOptions: NextAuthOptions = {
         });
 
         if (person.is_new)
-          triggerEmail({
+          await triggerEmail({
             to: email,
             variables: { name: googleProfile.name },
             subject: "👋 Welcome to The Startup template",
@@ -73,7 +73,7 @@ const AuthOptions: NextAuthOptions = {
         });
 
         if (person.is_new)
-          triggerEmail({
+          await triggerEmail({
             to: email,
             variables: { name: githubProfile.name || "" },
             subject: "👋 Welcome to The Startup template",

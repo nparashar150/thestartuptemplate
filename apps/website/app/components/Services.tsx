@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from "@repo/ui/components/ui/card";
 import { Icons } from "@repo/ui/components/icons";
+import Image from "next/image";
 
 interface ServiceProps {
   title: string;
@@ -44,12 +45,10 @@ const Services = () => {
             </span>
             Services
           </h2>
-
           <p className="text-muted-foreground text-xl mt-4 mb-8 ">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             dolor.
           </p>
-
           <div className="flex flex-col gap-8">
             {serviceList.map(({ icon, title, description }: ServiceProps) => (
               <Card key={title}>
@@ -68,11 +67,12 @@ const Services = () => {
             ))}
           </div>
         </div>
-
-        <img
+        <Image
+          width={500}
+          height={500}
+          src="/cube-leg.png"
           alt="About services"
           className="w-[300px] md:w-[500px] lg:w-[600px] object-contain"
-          src="https://raw.githubusercontent.com/leoMirandaa/shadcn-landing-page/main/src/assets/cube-leg.png"
         />
       </div>
     </section>

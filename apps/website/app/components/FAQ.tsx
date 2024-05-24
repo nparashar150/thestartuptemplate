@@ -10,13 +10,12 @@ const FAQ: FC<FAQProps> = ({ title, subtitle, contactEmail, items = [] }) => {
       <Accordion type="single" collapsible className="w-full AccordionRoot">
         {items?.map(({ question, answer, key }) => (
           <AccordionItem key={key} value={key} className="border-b-0">
-            <AccordionTrigger className="text-left">{question}</AccordionTrigger>
-
-            <AccordionContent>{answer}</AccordionContent>
+            <AccordionTrigger className="text-left text-lg">{question}</AccordionTrigger>
+            <AccordionContent className="text-[1rem] text-muted-foreground">{answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-      <h3 className="font-medium mt-4">
+      <h3 className="text-lg font-medium mt-10 text-muted-foreground">
         Still have questions?{" "}
         <a rel="noreferrer noopener" href={`mailto:${contactEmail}`} className="text-primary transition-all border-primary hover:border-b-2">
           Contact me

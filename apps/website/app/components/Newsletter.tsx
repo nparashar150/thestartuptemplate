@@ -40,9 +40,9 @@ const Newsletter: FC<NewsletterProps> = ({ title, subtitle, buttonText, curlyTex
             <Image src="/curly-arrow.png" width={35} height={35} alt="Curly arrow" />
             <span style={happyMonkey.style} className="mt-10 font-bold text-black -scale-x-100 text-sm">
               {submissionStage === "idle" && curlyText}
-              {submissionStage === "loading" && "🤔 Subscribing..."}
-              {submissionStage === "success" && <p className="text-sm text-center text-green-500">🎉 Subscribed successfully!</p>}
-              {submissionStage === "error" && <p className="text-sm text-center text-red-500">😢 Something went wrong, please try again later.</p>}
+              {submissionStage === "loading" && <p className="dark:invert text-sm text-center">🤔 Subscribing...</p>}
+              {submissionStage === "success" && <p className="dark:invert text-sm text-center text-green-500">🎉 Subscribed successfully!</p>}
+              {submissionStage === "error" && <p className="dark:invert text-sm text-center text-red-500">😢 Something went wrong, please try again later.</p>}
             </span>
           </div>
         </form>
