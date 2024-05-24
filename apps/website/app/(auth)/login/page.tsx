@@ -2,7 +2,7 @@ import GridPattern from "@repo/ui/components/grid-pattern";
 import { Icons } from "@repo/ui/components/icons";
 import { cn } from "@repo/ui/lib/utils";
 import Link from "next/link";
-import { GithubSignInButton, GoogleSignInButton } from "../../components/auth-button";
+import { GithubSignInButton, GoogleSignInButton } from "../../components/AuthButton";
 
 export default function AuthenticationPage() {
   return (
