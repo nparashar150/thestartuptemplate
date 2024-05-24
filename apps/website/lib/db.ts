@@ -45,25 +45,30 @@ const getOrCreateUser = async (user: GetOrCreateUserProps) => {
 };
 
 const subscribeToNewsletter = async (email: string) => {
-  const existingSubscriber = await edgeql
-    .select(edgeql.NewsletterSubscription, (subscriber) => ({
-      ...edgeql.NewsletterSubscription["*"],
-      filter_single: edgeql.op(subscriber.email, "=", email),
-    }))
-    .run(client);
+  try {
+    const existingSubscriber = await edgeql
+      .select(edgeql.NewsletterSubscription, (subscriber) => ({
+        ...edgeql.NewsletterSubscription["*"],
+        filter_single: edgeql.op(subscriber.email, "=", email),
+      }))
+      .run(client);
 
-  if (existingSubscriber) return existingSubscriber;
+    if (existingSubscriber) return existingSubscriber;
 
-  const newsletterSubscriber = await edgeql.insert(edgeql.NewsletterSubscription, { email }).unlessConflict().run(client);
+    const newsletterSubscriber = await edgeql.insert(edgeql.NewsletterSubscription, { email }).unlessConflict().run(client);
 
-  await triggerEmail({
-    to: email,
-    variables: {},
-    subject: "Welcome to the newsletter!",
-    template: "thank you for subscribing to naman's newsletter!",
-  });
+    await triggerEmail({
+      to: email,
+      variables: {},
+      subject: "Welcome to the newsletter!",
+      template: "thank you for subscribing to naman's newsletter!",
+    });
 
-  return newsletterSubscriber;
+    return newsletterSubscriber;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Something went wrong");
+  }
 };
 
 const getTemplateConfig = async (email: string) => {

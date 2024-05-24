@@ -1,19 +1,9 @@
 import axios from "axios";
 import FormData from "form-data";
 
-if (
-  !process.env.MAILGUN_API_KEY ||
-  !process.env.MAILGUN_DOMAIN ||
-  !process.env.MAILGUN_SENDER_EMAIL
-)
-  throw new Error("Mailgun environment variables not set");
+const triggerEmail = async ({ to, subject, template, variables }: EmailProps) => {
+  if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN || !process.env.MAILGUN_SENDER_EMAIL) throw new Error("Mailgun environment variables not set");
 
-const triggerEmail = async ({
-  to,
-  subject,
-  template,
-  variables,
-}: EmailProps) => {
   let data = new FormData();
   data.append("from", process.env.MAILGUN_SENDER_EMAIL);
   data.append("to", to);
