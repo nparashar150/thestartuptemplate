@@ -1,6 +1,7 @@
 "use client";
 
 import { Icons } from "@repo/ui/components/icons";
+import { AlertDialogAction, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@repo/ui/components/ui/alert-dialog";
 import { Badge } from "@repo/ui/components/ui/badge";
 import { Button } from "@repo/ui/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@repo/ui/components/ui/dropdown-menu";
@@ -11,12 +12,14 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import config from "../../../config";
 import Editor from "../../components/Editor";
+import Modal from "../../components/Modal";
 import ThemeToggle from "../../components/ThemeToggle";
 
 const Dashboard = () => {
   const [iframeKey, setIframeKey] = useState(0);
   const { data: session, status } = useSession();
   const [layout, setLayout] = useState<"left" | "right">("left");
+  const [showAlert, setShowAlert] = useState(localStorage?.getItem("shownAlert") === "true" ? false : true);
   const frameUrl = typeof window !== "undefined" && window.location.origin;
 
   const [editorState, setEditorState] = useState(JSON.stringify(config, null, 2));
@@ -26,11 +29,21 @@ const Dashboard = () => {
     window.open(`${frameUrl}?email=${session?.user?.email}`, "_blank");
   };
 
+  const onModalOpen = () => {
+    setShowAlert(true);
+    localStorage.setItem("shownAlert", "false");
+  };
+
+  const onModalClose = () => {
+    setShowAlert(false);
+    localStorage.setItem("shownAlert", "true");
+  };
+
   useEffect(() => {
     if (debouncedValue && session?.user?.email) {
       axios.post("/api/config", { config: JSON.parse(debouncedValue), email: session.user.email }).then(() => {
         setIframeKey((prev) => prev + 1);
-      })
+      });
     }
   }, [debouncedValue]);
 
@@ -39,7 +52,7 @@ const Dashboard = () => {
       <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
         <h1 className="text-xl font-semibold">Playground</h1>
         <div className="flex gap-2 ml-auto">
-          <Button variant="outline" className="ml-auto gap-1.5 text-sm">
+          <Button variant="outline" onClick={() => onModalOpen()} className="ml-auto gap-1.5 text-sm">
             <Icons.clipboard className="size-4" />
             Copy
           </Button>
@@ -82,6 +95,27 @@ const Dashboard = () => {
           {frameUrl && <iframe key={iframeKey} src={`${frameUrl}?email=${session?.user?.email}`} className="w-full h-full rounded-xl" />}
         </div>
       </main>
+      <Modal isOpen={showAlert} onClose={(isOpen) => setShowAlert(isOpen)} className="max-w-[600px]">
+        <AlertDialogHeader>
+          <AlertDialogTitle>Welcome to Playground 🎉</AlertDialogTitle>
+          <AlertDialogDescription>This is a playground where you can live edit the template config and see the changes in real-time.</AlertDialogDescription>
+          <AlertDialogDescription>Once you are happy with the changes, you can get the template with your custom config by using:</AlertDialogDescription>
+          <AlertDialogDescription className="bg-muted p-1">
+            <kbd className="rounded-md">npx create-thestartuptemplate@latest --email={session?.user?.email}</kbd>
+          </AlertDialogDescription>
+
+          <AlertDialogDescription>
+            If you face any issues during the process, please refer to the{" "}
+            <a href="https://docs.side.quik.run/tutorials/playground-builder" target="_blank" className="underline underline-offset-2">
+              documentation
+            </a>
+            .
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter className="mr-auto">
+          <AlertDialogAction onClick={() => onModalClose()}>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </Modal>
     </>
   );
 };
