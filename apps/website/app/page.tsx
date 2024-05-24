@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import config from "../config";
+import config from "../config.json";
 import About from "./components/About";
 import Cta from "./components/Cta";
 import FAQ from "./components/FAQ";

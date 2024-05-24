@@ -41,7 +41,7 @@
   },
   "HERO": {
     "pretitle": "Introducing The Startup Template",
-    "title": "{{Simplify}} your side {{hustle}}  journey",
+    "title": "{{Simplify}}  your side {{hustle}}  journey",
     "subtitle": "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
     "primaryButtonText": "npx create-thestartuptemplate@latest",
     "secondaryButtonText": "Playground",
@@ -60,7 +60,28 @@
         "badgeTitle": "Most Popular",
         "primaryButtonText": "Read the Docs",
         "description": "All the tools you need to launch fast and efficiently.",
-        "features": ["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "Live Playground"]
+        "features": [
+          {
+            "title": "Pre-built Authentication",
+            "icon": "keyRound"
+          },
+          {
+            "title": "Email Notifications",
+            "icon": "atSign"
+          },
+          {
+            "title": "Pre-built Components",
+            "icon": "code2"
+          },
+          {
+            "title": "Plug-and-Play Database",
+            "icon": "databaseZap"
+          },
+          {
+            "title": "Live Playground",
+            "icon": "settings2Icon"
+          }
+        ]
       },
       "serviceCard": {
         "title": "Theme Switcher",
@@ -109,9 +130,9 @@
     ]
   },
   "ABOUT": {
-    "aboutImage": "/pilot.png",
     "title": "About The Startup Template",
     "subtitle": "This is a pre-built template using Next.js, EdgeDB, Turborepo, Next Auth, ShadcnUI and Mailgun to help you quickly set up and launch your app. It includes a beautiful landing page, a dashboard, and essential integrations, saving you time and effort.",
+    "aboutImage": "/pilot.png",
     "stats": [
       {
         "title": "Downloads",
