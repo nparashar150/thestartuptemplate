@@ -27,8 +27,8 @@ export default function AuthenticationPage() {
         </Link>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
-            <p className="text-lg">&ldquo;Time saved is progress gained—launch your project swiftly with The Startup Template. &rdquo;</p>
-            <footer className="text-sm">Naman Parashar</footer>
+            <p className="text-lg">&ldquo;Every second counts — kickstart your project with The Startup&rdquo;</p>
+            <footer className="text-sm">The Startup</footer>
           </blockquote>
         </div>
       </div>
