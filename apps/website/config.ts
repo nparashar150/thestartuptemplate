@@ -273,4 +273,7 @@ const config = {
   FOOTER,
 };
 
+type Config = typeof config;
+
 export default config;
+export type { Config };

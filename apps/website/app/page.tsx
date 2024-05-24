@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import NoSSR from "./components/NoSSR";
+import { Config } from "../config";
 
 // import Features from "./components/Features"; // Uncomment this line to enable the Pricing section
 // import Services from "./components/Services"; // Uncomment this line to enable the Pricing section
@@ -25,7 +26,7 @@ import NoSSR from "./components/NoSSR";
 const Page = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
-  const [configState, setConfigState] = useState<typeof config>(config);
+  const [configState, setConfigState] = useState<Config>(config as unknown as Config);
 
   const getConfig = useCallback(async () => {
     const response = await axios.get(`/api/config?email=${email}`);
