@@ -6,11 +6,16 @@ const log = (logMessage) => console.log("\x1b[32m%s\x1b[0m", logMessage);
 const logError = (logMessage) => console.log("\x1b[31m%s\x1b[0m", logMessage);
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
+const getEmailArgument = () => {
+  for (const arg of process.argv) if (arg.startsWith("--email=")) return arg.split("=")[1];
+  return null;
+};
 
+const email = getEmailArgument();
 const BRANCH_MAP = {
-  1: "main",
-  2: "website",
-}
+  1: "turbo-website",
+  2: "website"
+};
 
 const runCommand = (command) => {
   try {
@@ -23,11 +28,12 @@ const runCommand = (command) => {
   return true;
 };
 
-const repoName = await prompt("Enter the name of project (default: thestartuptemplate): ") || "thestartuptemplate";
-const repoBranch = await prompt(`Which branch do you want to clone? (default: 1): 
+const repoName = (await prompt("Enter the name of project (default: thestartuptemplate): ")) || "thestartuptemplate";
+const repoBranch =
+  (await prompt(`Which branch do you want to clone? (default: 1): 
   1. turbo-website
   2. website
-`) || "1";
+`)) || "1";
 
 const gitCheckoutCommand = `git clone --depth 1 -b ${BRANCH_MAP[repoBranch] || "main"} --single-branch https://github.com/nparashar150/thestartuptemplate ${repoName}`;
 const gitRemoveRemote = `cd ${repoName} && git remote remove origin`;
@@ -39,17 +45,28 @@ const checkOut = runCommand(gitCheckoutCommand);
 
 if (!checkOut) process.exit(-1);
 
-log(`Removing remote origin...`);
+log(`\nRemoving remote origin...`);
 const removeRemote = runCommand(gitRemoveRemote);
+
+if (email) {
+  log(`\nWelcome ${email}!`);
+  log("Fetching the latest template configuration...");
+  const fetchConfig = `curl  --output config.json "https://side.quik.run/api/config?email=${email}"`;
+  const fetchConfigStatus = runCommand(fetchConfig);
+  if (!fetchConfigStatus) process.exit(-1);
+  const updateConfig = `cd ${repoName} && cp ../config.json apps/website/config.json`;
+  const updateConfigStatus = runCommand(updateConfig);
+  if (!updateConfigStatus) process.exit(-1);
+}
 
 if (!removeRemote) process.exit(-1);
 
-log(`Installing dependencies...`);
+log(`\nInstalling dependencies...`);
 const install = runCommand(installCommand);
 
 if (!install) process.exit(-1);
 
-log(`Initializing EdgeDB...`);
+log(`\nInitializing EdgeDB...`);
 runCommand(`${dbPath} && npx edgedb project init`);
 // if init error saying already initialized, ignore it
 
@@ -57,14 +74,13 @@ log(`Setting up EdgeDB...`);
 const edgedbGenerate = runCommand(`${dbPath} && pnpm generate`);
 if (!edgedbGenerate) process.exit(-1);
 
-log(`Cloning env example...`);
 runCommand(`cd ${repoName} && cp env.example .env`);
 runCommand(`cd ${repoName} && cp env.example apps/website/.env`);
-runCommand(`cd ${repoName} && cp env.example apps/blogs/.env`);
 
-log(`\nAll done!\n`);
-log(`cd ${repoName} && pnpm dev\n`);
+log(`\nAll done!`);
+log(`cd ${repoName} && pnpm dev`);
 log(`Please update the .env file with your credentials.\n`);
+log(`\nRead our documentation at https://docs.side.quik.run/tutorials/playground-builder`);
 log(`Happy coding!`);
 
 rl.close();
