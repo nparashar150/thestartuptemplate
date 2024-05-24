@@ -64,7 +64,28 @@ const HERO: Hero = {
       primaryButtonText: "Read the Docs",
       description: "All the tools you need to launch fast and efficiently.",
       onPrimaryButtonClick: () => window.open("https://docs.side.quik.run/tutorials/playground-builder"),
-      features: ["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "Live Playground"],
+      features: [
+        {
+          title: "Pre-built Authentication",
+          icon: "keyRound",
+        },
+        {
+          title: "Email Notifications",
+          icon: "atSign",
+        },
+        {
+          title: "Pre-built Components",
+          icon: "code2",
+        },
+        {
+          title: "Plug-and-Play Database",
+          icon: "databaseZap",
+        },
+        {
+          title: "Live Playground",
+          icon: "settings2Icon",
+        },
+      ],
     },
     serviceCard: {
       title: "Theme Switcher",

@@ -103,12 +103,15 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
         </CardHeader>
         <hr className="w-4/5 m-auto -mt-2 mb-4" />
         <CardFooter className="flex">
-          <div className="space-y-4">
-            {cards?.pricingCard?.features.map((benefit: string) => (
-              <span key={benefit} className="flex">
-                <Icons.check className="text-green-500" /> <h3 className="ml-2">{benefit}</h3>
-              </span>
-            ))}
+          <div className="space-y-3">
+            {cards?.pricingCard?.features.map((benefit: any) => {
+              const Icon = Icons[benefit?.icon as keyof typeof Icons];
+              return (
+                <span key={benefit} className="inline-flex justify-center items-center gap-x-3">
+                  {Icon ? <Icon className="size-5" /> : <Image className="bg-white rounded-full" src={benefit?.icon} width={25} height={25} alt={benefit?.title} />} <h3>{benefit?.title}</h3>
+                </span>
+              );
+            })}
           </div>
         </CardFooter>
         <BorderBeam className="-z-10" />
