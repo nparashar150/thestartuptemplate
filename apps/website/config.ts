@@ -16,9 +16,9 @@ const NAVBAR: Navbar = {
       label: "Playground",
     },
     {
-      href: "/blogs",
+      href: "https://docs.side.quik.run/",
       target: "_blank",
-      label: "Blogs",
+      label: "Docs",
     },
     {
       href: "/#faq",
@@ -248,9 +248,9 @@ const FOOTER: Footer = {
   ],
   Resources: [
     {
-      href: "/blogs",
+      href: "https://docs.side.quik.run",
       target: "_blank",
-      label: "Blogs",
+      label: "Docs",
     },
     {
       href: "#faq",
