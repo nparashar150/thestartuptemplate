@@ -79,7 +79,7 @@ Feel free to customize the template according to your needs. You can modify the 
 
 ## Contributing
 
-I welcome contributions! Please read our [Contributing Guide](../CONTRIBUTING.md) to learn how you can help us improve this project.
+I welcome contributions! Please read our [Contributing Guide](contributing.md) to learn how you can help us improve this project.
 
 ## Acknowledgements
 
