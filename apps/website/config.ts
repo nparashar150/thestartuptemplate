@@ -118,7 +118,7 @@ const ABOUT: About = {
   title: "About The Startup Template",
   subtitle:
     "This is a pre-built template using Next.js, EdgeDB, Turborepo, Next Auth, ShadcnUI and Mailgun to help you quickly set up and launch your app. It includes a beautiful landing page, a dashboard, and essential integrations, saving you time and effort.",
-  aboutImage: "https://raw.githubusercontent.com/leoMirandaa/shadcn-landing-page/main/src/assets/pilot.png",
+  aboutImage: "/pilot.png",
   stats: [
     {
       title: "Downloads",
