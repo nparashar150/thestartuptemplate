@@ -2,10 +2,14 @@ import { BorderBeam } from "@repo/ui/components/border-beam";
 import { Icons } from "@repo/ui/components/icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/components/ui/avatar";
 import { Badge } from "@repo/ui/components/ui/badge";
-import { buttonVariants } from "@repo/ui/components/ui/button";
+import { Button, buttonVariants } from "@repo/ui/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@repo/ui/components/ui/card";
 import { FC } from "react";
+import Image from "next/image";
 import { Hero } from "../../types";
+import { Happy_Monkey } from "next/font/google";
+
+const happyMonkey = Happy_Monkey({ preload: true, weight: ["400"], subsets: ["latin"] });
 
 const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
   return (
@@ -22,7 +26,7 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
           </div>
         </CardHeader>
         <CardContent>{cards?.tweetCard?.tweet}</CardContent>
-        <BorderBeam />
+        <BorderBeam className="-z-10" />
       </Card>
 
       <Card className="absolute right-[20px] top-4 w-80 flex flex-col justify-center items-center drop-shadow-xl shadow-black/10 dark:shadow-white/10">
@@ -34,7 +38,7 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
         <CardContent className="text-center text-muted-foreground pb-2">
           <p>{cards?.aboutCard?.description}</p>
         </CardContent>
-        <CardFooter className="z-10">
+        <CardFooter>
           <a
             rel="noreferrer noopener"
             href={cards?.aboutCard?.socialLinks?.github}
@@ -76,10 +80,10 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
             <Icons.linkedin className="h-8 w-8" />
           </a>
         </CardFooter>
-        <BorderBeam />
+        <BorderBeam className="-z-10" />
       </Card>
 
-      <Card className="absolute top-[150px] left-[50px] w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+      <Card className="absolute top-[170px] left-[50px] w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader>
           <CardTitle className="flex item-center justify-between">
             {cards?.pricingCard?.planName}
@@ -93,6 +97,9 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
           </div>
 
           <CardDescription>{cards?.pricingCard?.description}</CardDescription>
+          <Button size="sm" className="w-full" onClick={cards?.pricingCard?.onPrimaryButtonClick}>
+            {cards?.pricingCard?.primaryButtonText}
+          </Button>
         </CardHeader>
         <hr className="w-4/5 m-auto -mt-2 mb-4" />
         <CardFooter className="flex">
@@ -104,7 +111,13 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
             ))}
           </div>
         </CardFooter>
-        <BorderBeam />
+        <BorderBeam className="-z-10" />
+        <div className="pointer-events-none dark:invert -scale-x-100 absolute w-36 top-[9.5rem] -left-[7.5rem] inline-flex justify-center items-center gap-1">
+          <Image src="/curly-arrow.png" width={35} height={35} alt="Curly arrow" />
+          <span style={happyMonkey.style} className="mt-10 font-bold text-black -scale-x-100 text-sm">
+            {cards?.pricingCard?.curlyText}
+          </span>
+        </div>
       </Card>
       <Card className="absolute w-[350px] -right-[10px] bottom-[50px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
@@ -116,7 +129,7 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
             <CardDescription className="text-md mt-2">{cards?.serviceCard?.description}</CardDescription>
           </div>
         </CardHeader>
-        <BorderBeam />
+        <BorderBeam className="-z-10" />
       </Card>
     </div>
   );

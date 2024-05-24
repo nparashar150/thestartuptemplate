@@ -58,9 +58,12 @@ const HERO: Hero = {
     },
     pricingCard: {
       planName: "Free",
-      badgeTitle: "Most Popular",
       pricePerMonth: "$0",
+      curlyText: "get started",
+      badgeTitle: "Most Popular",
+      primaryButtonText: "Read the Docs",
       description: "All the tools you need to launch fast and efficiently.",
+      onPrimaryButtonClick: () => window.open("https://docs.side.quik.run/tutorials/playground-builder"),
       features: ["Pre-built Authentication", "Email Notifications", "Pre-built Components", "Plug-and-Play Database", "Live Playground"],
     },
     serviceCard: {
