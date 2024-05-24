@@ -7,7 +7,7 @@ description: All the components are made with ShadcnUI + TailwindCSS
 The template comes with built-in theming support of light & dark modes. By default the theme is set to user's system theme.&#x20;
 
 {% hint style="info" %}
-In order to change the theme you can edit the globals.css file located at <mark style="background-color:yellow;">packages/ui/src/globals.css</mark>
+In order to change the theme you can edit the globals.css file located at packages/ui/src/globals.css
 {% endhint %}
 
 ## Component List
