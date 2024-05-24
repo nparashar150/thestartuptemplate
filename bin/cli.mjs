@@ -11,7 +11,9 @@ const getEmailArgument = () => {
   return null;
 };
 
-const email = getEmailArgument();
+const email = getEmailArgument() || "default@thestartup.template";
+const isDefaultEmail = email === "default@thestartup.template";
+
 const BRANCH_MAP = {
   1: "turbo-website",
   2: "website"
@@ -48,16 +50,14 @@ if (!checkOut) process.exit(-1);
 log(`\nRemoving remote origin...`);
 const removeRemote = runCommand(gitRemoveRemote);
 
-if (email) {
-  log(`\nWelcome ${email}!`);
-  log("Fetching the latest template configuration...");
-  const fetchConfig = `curl  --output config.json "https://side.quik.run/api/config?email=${email}"`;
-  const fetchConfigStatus = runCommand(fetchConfig);
-  if (!fetchConfigStatus) process.exit(-1);
-  const updateConfig = `cd ${repoName} && cp ../config.json apps/website/config.json`;
-  const updateConfigStatus = runCommand(updateConfig);
-  if (!updateConfigStatus) process.exit(-1);
-}
+!isDefaultEmail && log(`\nWelcome ${email}!`);
+log("Fetching the latest template configuration...");
+const fetchConfig = `curl  --output config.json "https://side.quik.run/api/config?email=${email}&config_only=true"`;
+const fetchConfigStatus = runCommand(fetchConfig);
+if (!fetchConfigStatus) process.exit(-1);
+const updateConfig = `cd ${repoName} && cp ../config.json apps/website/config.json`;
+const updateConfigStatus = runCommand(updateConfig);
+if (!updateConfigStatus) process.exit(-1);
 
 if (!removeRemote) process.exit(-1);
 
@@ -81,6 +81,6 @@ log(`\nAll done!`);
 log(`cd ${repoName} && pnpm dev`);
 log(`Please update the .env file with your credentials.\n`);
 log(`\nRead our documentation at https://docs.side.quik.run/tutorials/playground-builder`);
-log(`Happy coding!`);
+log(`Happy coding!`); 
 
 rl.close();
