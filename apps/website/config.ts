@@ -16,7 +16,7 @@ const NAVBAR: Navbar = {
       label: "Playground",
     },
     {
-      href: "https://docs.side.quik.run/",
+      href: "https://docs.side.quik.run",
       target: "_blank",
       label: "Docs",
     },
@@ -168,13 +168,11 @@ const BANNER: Banner = {
   title: "Accelerate your project, launch faster, and succeed",
   subtitle: "Effortlessly integrate auth, db, and email communication. Spend more time building your product, less on integrations. Get the tools you need to launch quickly with ease.",
   primaryButtonText: "Playground",
-  secondaryButtonText: "Blogs",
+  secondaryButtonText: "Docs",
   onPrimaryButtonClick: () => {
     window.location.href = "/dashboard";
   },
-  onSecondaryButtonClick: () => {
-    window.location.href = "/blogs";
-  },
+  onSecondaryButtonClick: () => window.open("https://docs.side.quik.run"),
 };
 
 const NEWSLETTER_CONFIG: Newsletter = {
