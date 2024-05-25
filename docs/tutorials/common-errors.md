@@ -2,7 +2,7 @@
 description: List of common errors faced by users.
 ---
 
-# Common erros
+# Common errors
 
 ## Failed to execute command ... pnpm install
 
@@ -42,7 +42,7 @@ If you see this error then Mailgun variables not set in your .env, please check 
 
 </div>
 
-This error is same as [#login-is-not-working](common-erros.md#login-is-not-working "mention") i.e. Mailgun variables are not set in .env
+This error is same as [#login-is-not-working](common-errors.md#login-is-not-working "mention") i.e. Mailgun variables are not set in .env
 
 ## Blank screen after local setup
 

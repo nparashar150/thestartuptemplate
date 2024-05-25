@@ -11,4 +11,4 @@
 * [Setting Up Email Notifications](tutorials/setting-up-email-notifications.md)
 * [Connecting to EdgeDB Cloud](tutorials/connecting-to-edgedb-cloud.md)
 * [Theming & Components](tutorials/theming-and-components.md)
-* [Common erros](tutorials/common-erros.md)
+* [Common errors](tutorials/common-errors.md)
