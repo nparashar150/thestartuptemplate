@@ -57,7 +57,7 @@ const Page = () => {
           {configState?.NAVBAR && <Navbar {...configState?.NAVBAR} />}
           {configState?.HERO && <Hero {...configState?.HERO} />}
           {configState?.PARTNERS && <Partners {...configState?.PARTNERS} />}
-          <LoomEmbed />
+          {!email && <LoomEmbed />}
           {configState?.ABOUT && <About {...configState?.ABOUT} />}
           {configState?.FEATURE_CARDS && <HowItWorks {...configState?.FEATURE_CARDS} />}
           {/* <Features /> */}
