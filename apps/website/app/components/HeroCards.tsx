@@ -122,7 +122,7 @@ const HeroCards: FC<Hero["cards"]> = ({ cards }) => {
           </span>
         </div>
       </Card>
-      <Card className="absolute w-[350px] -right-[10px] bottom-[50px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
+      <Card className="absolute w-[350px] -right-[10px] bottom-[75px]  drop-shadow-xl shadow-black/10 dark:shadow-white/10">
         <CardHeader className="space-y-1 flex md:flex-row justify-start items-start gap-4">
           <div className="mt-1 bg-primary/20 p-1 rounded-2xl">
             <Icons.funkyLightbulbIcon className="fill-black dark:fill-[#F596D3]" />
