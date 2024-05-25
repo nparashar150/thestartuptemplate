@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../LICENSE/)
 
-Welcome to **The Startup Template**! This template is designed to help you kickstart your side project with a pre-configured setup that saves you time and effort. It includes a beautiful landing page, a feature-rich dashboard, and integrates seamlessly with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), and [NextAuth](https://next-auth.js.org/).
+Welcome to **The Startup Template**! This template is designed to help you kickstart your side project with a pre-configured setup that saves you time and effort. It includes a beautiful landing page, a feature-rich dashboard, and integrates seamlessly with [EdgeDB](https://www.edgedb.com/), [Next.js](https://nextjs.org/), [ShadcnUI](https://ui.shadcn.com/), [Mailgun](https://www.mailgun.com/) and [NextAuth](https://next-auth.js.org/).
 
 ## Features
 
@@ -16,7 +16,7 @@ Welcome to **The Startup Template**! This template is designed to help you kicks
 1.  **Download the Template**: Get the pre-configured project setup.
 
     ```sh
-    npx create-thestartuptemplate my-app
+    npx create-thestartuptemplate@latest
     ```
 2. **Customize Your Content**: Update the landing and dashboard pages with your content.
 3. **Integrate Your Features**: Add your unique features using the provided components.
@@ -27,7 +27,7 @@ Welcome to **The Startup Template**! This template is designed to help you kicks
 To get started with The Startup Template, run the following command:
 
 ```sh
-npx create-thestartuptemplate my-app
+npx create-thestartuptemplate@latest
 ```
 
 Replace `my-app` with the name of your project. This command will set up a new project with all necessary dependencies and configurations.
@@ -37,7 +37,7 @@ Replace `my-app` with the name of your project. This command will set up a new p
 1.  Navigate to your project directory:
 
     ```sh
-    cd my-app
+    cd thestartuptemplate
     ```
 2.  Install the dependencies:
 
