@@ -46,9 +46,9 @@ const HERO: Hero = {
   title: "{{Simplify}}  your side {{hustle}}  journey",
   subtitle: "Everything you need to build, launch, and grow your web app effortlessly. Focus on your vision, and start making your first $ faster.",
   primaryButtonText: "npx create-thestartuptemplate@latest",
+  primaryButtonShowIcon: true,
   secondaryButtonText: "Playground",
   curlyText: "try now",
-
   cards: {
     tweetCard: {
       name: "ShadcnUI",

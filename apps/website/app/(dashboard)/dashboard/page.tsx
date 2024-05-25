@@ -18,6 +18,7 @@ import ThemeToggle from "../../components/ThemeToggle";
 const Dashboard = () => {
   const [iframeKey, setIframeKey] = useState(0);
   const { data: session, status } = useSession();
+  const [isFetching, setIsFetching] = useState(true);
   const [layout, setLayout] = useState<"left" | "right">("left");
   const [showAlert, setShowAlert] = useState(localStorage?.getItem("shownAlert") === "true" ? false : true);
   const frameUrl = typeof window !== "undefined" && window.location.origin;
@@ -39,13 +40,40 @@ const Dashboard = () => {
     localStorage.setItem("shownAlert", "true");
   };
 
+  // TODO: Find a better way to fetch user config
   useEffect(() => {
-    if (debouncedValue && session?.user?.email) {
-      axios.post("/api/config", { config: JSON.parse(debouncedValue), email: session.user.email }).then(() => {
-        setIframeKey((prev) => prev + 1);
-      });
+    const getUserConfig = async () => {
+      if (session?.user?.email) {
+        try {
+          setIsFetching(true);
+          const { data } = await axios.get(`/api/config?email=${session.user.email}&config_only=true`);
+          setEditorState(JSON.stringify(data, null, 2));
+        } catch (error) {
+          console.error(error);
+          setEditorState(JSON.stringify(config, null, 2));
+        } finally {
+          setTimeout(() => {
+            setIsFetching(false);
+          }, 1500) // added because of debounce
+        }
+      }
     }
-  }, [debouncedValue]);
+
+    getUserConfig();
+  }, [])
+
+  useEffect(() => {
+    if (debouncedValue && session?.user?.email && !isFetching) {
+      try {
+        const json = JSON.parse(debouncedValue);
+        axios.post("/api/config", { config: json, email: session.user.email }).then(() => {
+          setIframeKey((prev) => prev + 1);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [debouncedValue, session?.user?.email, isFetching]);
 
   return (
     <>
@@ -80,7 +108,7 @@ const Dashboard = () => {
       <main className="flex-1 gap-4 overflow-scroll h-full p-4 flex md:flex-row flex-col-reverse">
         <div className={cn("relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/50 p-4 w-full", layout === "left" ? "md:w-2/3" : "md:w-1/3")}>
           <p className="-mt-1 mb-2 text-sm font-semibold">{status}</p>
-          <Editor value={editorState} onChange={(value) => setEditorState(value)} />
+          {!isFetching && <Editor value={editorState} onChange={(value) => setEditorState(value)} />}
           <Badge variant="outline" className="absolute right-3 top-3">
             Input
           </Badge>
