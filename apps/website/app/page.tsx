@@ -1,7 +1,12 @@
 "use client";
 
+import { Icons } from "@repo/ui/components/icons";
+import { Badge } from "@repo/ui/components/ui/badge";
+import { cn } from "@repo/ui/lib/utils";
+import axios from "axios";
+import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import config from "../config";
+import config, { Config } from "../config";
 import About from "./components/About";
 import Cta from "./components/Cta";
 import FAQ from "./components/FAQ";
@@ -10,15 +15,10 @@ import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import Navbar from "./components/Navbar";
 import Newsletter from "./components/Newsletter";
+import NoSSR from "./components/NoSSR";
 import Partners from "./components/Partners";
 import ScrollToTop from "./components/ScrollToTop";
-import { useSearchParams } from "next/navigation";
-import axios from "axios";
-import NoSSR from "./components/NoSSR";
-import { Config } from "../config";
-import { cn } from "@repo/ui/lib/utils";
-import { Badge } from "@repo/ui/components/ui/badge";
-import { Icons } from "@repo/ui/components/icons";
+import Script from "next/script";
 
 // import Features from "./components/Features"; // Uncomment this line to enable the Pricing section
 // import Services from "./components/Services"; // Uncomment this line to enable the Pricing section
@@ -73,6 +73,20 @@ const Page = () => {
           <Icons.spinner className="w-5 h-5 animate-spin" /> Loading config...
         </div>
       )}
+
+      <Script id="gtag" async src="https://www.googletagmanager.com/gtag/js?id=G-6ZHLYHQDD1" />
+      <Script
+        id="gatg-load"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-6ZHLYHQDD1');
+        `,
+        }}
+      />
     </NoSSR>
   );
 };
