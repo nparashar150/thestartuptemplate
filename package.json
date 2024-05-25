@@ -1,6 +1,6 @@
 {
   "name": "create-thestartuptemplate",
-  "version": "0.0.3-8",
+  "version": "0.0.3-9",
   "license": "MIT",
   "bin": "bin/cli.mjs",
   "repository": {

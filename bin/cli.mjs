@@ -33,11 +33,12 @@ const runCommand = (command) => {
 const repoName = (await prompt("Enter the name of project (default: thestartuptemplate): ")) || "thestartuptemplate";
 const repoBranch =
   (await prompt(`Which branch do you want to clone? (default: 1): 
-  1. turbo-website
-  2. website
+  1. Turborepo setup
+  2. Nextjs setup (coming soon)
 `)) || "1";
 
-const gitCheckoutCommand = `git clone --depth 1 -b ${BRANCH_MAP[repoBranch] || "main"} --single-branch https://github.com/nparashar150/thestartuptemplate ${repoName}`;
+// TODO: add repo branch 
+const gitCheckoutCommand = `git clone --depth 1 -b ${BRANCH_MAP[1] || "main"} --single-branch https://github.com/nparashar150/thestartuptemplate ${repoName}`;
 const gitRemoveRemote = `cd ${repoName} && git remote remove origin`;
 const installCommand = `cd ${repoName} && pnpm install`;
 const dbPath = `cd ${repoName}/packages/db`;
