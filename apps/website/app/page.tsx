@@ -19,6 +19,7 @@ import NoSSR from "./components/NoSSR";
 import Partners from "./components/Partners";
 import ScrollToTop from "./components/ScrollToTop";
 import Script from "next/script";
+import LoomEmbed from "./components/LoomEmbed";
 
 // import Features from "./components/Features"; // Uncomment this line to enable the Pricing section
 // import Services from "./components/Services"; // Uncomment this line to enable the Pricing section
@@ -56,6 +57,7 @@ const Page = () => {
           {configState?.NAVBAR && <Navbar {...configState?.NAVBAR} />}
           {configState?.HERO && <Hero {...configState?.HERO} />}
           {configState?.PARTNERS && <Partners {...configState?.PARTNERS} />}
+          <LoomEmbed />
           {configState?.ABOUT && <About {...configState?.ABOUT} />}
           {configState?.FEATURE_CARDS && <HowItWorks {...configState?.FEATURE_CARDS} />}
           {/* <Features /> */}
