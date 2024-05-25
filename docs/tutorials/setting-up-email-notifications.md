@@ -16,7 +16,7 @@ description: >-
 
     <div align="left">
 
-    <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Mailgun domains</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Mailgun domains</p></figcaption></figure>
 
     </div>
 
@@ -31,7 +31,7 @@ description: >-
 
     <div align="left">
 
-    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Mailgun api keys</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Mailgun api keys</p></figcaption></figure>
 
     </div>
 

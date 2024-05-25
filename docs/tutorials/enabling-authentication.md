@@ -20,7 +20,7 @@ description: >-
 
     <div align="left">
 
-    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>GCP screenshot</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>GCP screenshot</p></figcaption></figure>
 
     </div>
 2.  **Add to .env File**:
@@ -42,7 +42,7 @@ description: >-
 
     <div align="left">
 
-    <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Github custom oauth app creation screen</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Github custom oauth app creation screen</p></figcaption></figure>
 
     </div>
 
