@@ -71,36 +71,7 @@ const subscribeToNewsletter = async (email: string) => {
   }
 };
 
-const getTemplateConfig = async (email: string) => {
-  const templateConfig = await edgeql
-    .select(edgeql.TemplateConfig, (templateConfig) => ({
-      ...edgeql.TemplateConfig["*"],
-      filter_single: edgeql.op(templateConfig.creator.email, "=", email),
-    }))
-    .run(client);
-
-  return templateConfig;
-};
-
-const saveTemplateConfig = async (email: string, config: string) => {
-  await edgeql
-    .update(edgeql.TemplateConfig, (templateConfig) => ({
-      filter_single: edgeql.op(templateConfig.creator.email, "=", email),
-      set: { content: config },
-    }))
-    .run(client);
-
-  const newTemplateConfig = await edgeql
-    .select(edgeql.TemplateConfig, (templateConfig) => ({
-      ...edgeql.TemplateConfig["*"],
-      filter_single: edgeql.op(templateConfig.creator.email, "=", email),
-    }))
-    .run(client);
-
-  return newTemplateConfig;
-};
-
-export { getOrCreateUser, getTemplateConfig, saveTemplateConfig, subscribeToNewsletter };
+export { getOrCreateUser, subscribeToNewsletter };
 
 interface GetOrCreateUserProps {
   email: string;
