@@ -45,7 +45,7 @@ This is caused due to the config.json filter being empty. You can copy paste the
       "aboutCard": {
         "name": "Naman Parashar",
         "description": "Passionate about designing & coding great user experiences on the web.",
-        "designation": "Prodcut Developer",
+        "designation": "Product Developer",
         "socialLinks": { "github": "https://github.com/nparashar150", "twitter": "https://twitter.com/nparashar150", "linkedIn": "https://www.linkedin.com/in/nparashar150" }
       },
       "tweetCard": { "name": "ShadcnUI", "tweet": "This landing page is awesome! #TheStartupTemplate", "username": "@shadcn", "avatarUrl": "https://github.com/shadcn.png" },

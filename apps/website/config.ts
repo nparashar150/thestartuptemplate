@@ -93,7 +93,7 @@ const HERO: Hero = {
     },
     aboutCard: {
       name: "Naman Parashar",
-      designation: "Prodcut Developer",
+      designation: "Product Developer",
       description: "Passionate about designing & coding great user experiences on the web.",
       socialLinks: {
         twitter: "https://twitter.com/nparashar150",
