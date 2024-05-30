@@ -2,9 +2,29 @@
 description: List of common errors faced by users.
 ---
 
-# Common erros
+# Common errors
 
-## Login is not working?
+## Failed to execute command ... pnpm install
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Pnpm not found error</p></figcaption></figure>
+
+Install pnpm from [https://formulae.brew.sh/formula/pnpm](https://formulae.brew.sh/formula/pnpm) or [https://pnpm.io/installation](https://pnpm.io/installation).
+
+## Failed to execute command edgedb project init
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>EdgeDB is not installed</p></figcaption></figure>
+
+Install EdgeDB to your app by running `npx edgedb` or  by [https://www.edgedb.com/install](https://www.edgedb.com/install).&#x20;
+
+
+
+## ERR\_PNPM\_BAD\_PM\_VERSION  This project is configured to use v8.9.0 of pnpm. Your current pnpm is
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>error pnpm version mismatch</p></figcaption></figure>
+
+Use this command to start your app `export COREPACK_ENABLE_STRICT=0 && pnpm dev`
+
+## LogIn is not working?
 
 <div align="left">
 
@@ -22,7 +42,7 @@ If you see this error then Mailgun variables not set in your .env, please check 
 
 </div>
 
-This error is same as [#login-is-not-working](common-erros.md#login-is-not-working "mention") i.e. Mailgun variables are not set in .env
+This error is same as [#login-is-not-working](common-errors.md#login-is-not-working "mention") i.e. Mailgun variables are not set in .env
 
 ## Blank screen after local setup
 
